@@ -1,0 +1,54 @@
+[
+  {
+    "name": "RECURSIVE_INSPECTION",
+    "command": [
+      "python",
+      "-B",
+      "/mnt/data/agentforge-audit/RECURSIVE/recursive.py",
+      "audit",
+      "/mnt/data/agentforge-selfaudit-target"
+    ],
+    "exit_code": 0,
+    "native_status": "NO_OVERALL_STATUS",
+    "duration_seconds": 0.86,
+    "scope": "read_only_inspection",
+    "source_execution_environment": "isolated construction container; no external credentials",
+    "target": "source snapshot excluding reports/dist/dependencies"
+  },
+  {
+    "name": "RECURSIVE_VERIFICATION",
+    "command": [
+      "python",
+      "-B",
+      "/mnt/data/agentforge-audit/RECURSIVE/recursive.py",
+      "verify",
+      "/mnt/data/agentforge-selfaudit-target",
+      "--no-cache"
+    ],
+    "exit_code": 1,
+    "native_status": "BLOCKED",
+    "duration_seconds": 2.29,
+    "scope": "tool_verification_without_host_execution_approval",
+    "source_execution_environment": "isolated construction container; no external credentials",
+    "target": "source snapshot excluding reports/dist/dependencies"
+  },
+  {
+    "name": "BR360_SELF_AUDIT",
+    "command": [
+      "python",
+      "-B",
+      "/mnt/data/agentforge-audit/02_AXDIA_BUSINESS_READINESS_360/REPO_READY_axdia-business-readiness-360/runtime/br360_engine.py",
+      "audit",
+      "--project",
+      "/mnt/data/agentforge-selfaudit-target",
+      "--out",
+      "/mnt/data/agentforge/reports/axdia/BR360_SELF_AUDIT_RAW.json"
+    ],
+    "exit_code": 0,
+    "native_status": "FAIL",
+    "duration_seconds": 2.1,
+    "scope": "tool_verification_without_host_execution_approval",
+    "source_execution_environment": "isolated construction container; no external credentials",
+    "target": "source snapshot excluding reports/dist/dependencies"
+  }
+]

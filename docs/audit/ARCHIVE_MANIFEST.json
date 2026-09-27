@@ -1,0 +1,26 @@
+[
+  {
+    "name": "FORMATION(2).zip",
+    "size_bytes": 65765292,
+    "sha256": "b6c6151bbb6504b7139d3ae1f90408134bc08807b2c74f1e978b7205f449a8e1",
+    "engine_source_redistributed": false
+  },
+  {
+    "name": "RECURSIVE(3).zip",
+    "size_bytes": 108916676,
+    "sha256": "ea8da4687c6f33180f9d3069582daaa0ffd42763df296f1ed33c036f78c51d01",
+    "engine_source_redistributed": false
+  },
+  {
+    "name": "AXDIA_GO_LIVE_100_ET_PROMPTS_E2E_PAR_OUTIL(1).zip",
+    "size_bytes": 82957,
+    "sha256": "8704c544bc4ca49181d0710aa377fa3e04e72cbcdafc71ee7fe7d901f74446ba",
+    "engine_source_redistributed": false
+  },
+  {
+    "name": "02_AXDIA_BUSINESS_READINESS_360(1).zip",
+    "size_bytes": 953556,
+    "sha256": "5f7a1a0803c0fb996529fcef57082370f95756989b667545e242a8457c9a1098",
+    "engine_source_redistributed": false
+  }
+]

@@ -1,0 +1,8 @@
+
+> agentforge@0.1.0 test:live
+> node --experimental-strip-types --env-file-if-exists=.env scripts/live-check.ts
+
+.env not found. Continuing without it.
+(node:2842) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"status":"NOT_AVAILABLE","reason":"Explicit RUN_LIVE_CHECKS=true is required. No call was made."}

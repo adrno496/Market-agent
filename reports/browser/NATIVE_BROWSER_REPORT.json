@@ -1,0 +1,8 @@
+{
+  "scope": "NATIVE_LOCAL_BROWSER_E2E",
+  "status": "BLOCKED",
+  "reason": "Chromium net::ERR_BLOCKED_BY_ADMINISTRATOR on localhost navigation",
+  "policy_modified": false,
+  "actual_http_api_tests": "Separate Node test suite",
+  "external_services": "NOT_TESTED"
+}

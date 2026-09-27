@@ -1,0 +1,586 @@
+{
+  "profile": {
+    "target": "/mnt/data/agentforge-selfaudit-final",
+    "target_kind": "directory",
+    "stack": [
+      "Node.js",
+      "npm",
+      "Docker",
+      "Railway",
+      "Supabase",
+      "GitHub Actions"
+    ],
+    "languages": [
+      "TypeScript",
+      "Python",
+      "HTML",
+      "SQL",
+      "JavaScript",
+      "CSS"
+    ],
+    "package_managers": [
+      "npm"
+    ],
+    "build_systems": [
+      "Docker"
+    ],
+    "test_frameworks": [
+      "unit_test"
+    ],
+    "deploy_systems": [
+      "Docker",
+      "Railway",
+      "GitHub Actions"
+    ],
+    "database": [
+      "Supabase"
+    ],
+    "auth": [
+      "Supabase"
+    ],
+    "providers_external": [
+      "Supabase"
+    ],
+    "ai_llm": [],
+    "surfaces": [
+      "web"
+    ],
+    "ci_cd": [
+      "GitHub Actions"
+    ],
+    "critical_entrypoints": [
+      "Dockerfile",
+      "package.json"
+    ],
+    "detected_commands": [
+      {
+        "command": [
+          "npm",
+          "run",
+          "dev"
+        ],
+        "purpose": "runtime",
+        "source": "package.json:scripts",
+        "confidence": "HIGH",
+        "safe_to_run": false,
+        "requires_network": false,
+        "requires_credentials": false,
+        "expected_outputs": [],
+        "timeout": 240,
+        "fallback": null
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "worker"
+        ],
+        "purpose": "custom",
+        "source": "package.json:scripts",
+        "confidence": "HIGH",
+        "safe_to_run": false,
+        "requires_network": false,
+        "requires_credentials": false,
+        "expected_outputs": [],
+        "timeout": 240,
+        "fallback": null
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "test"
+        ],
+        "purpose": "custom",
+        "source": "package.json:scripts",
+        "confidence": "HIGH",
+        "safe_to_run": false,
+        "requires_network": false,
+        "requires_credentials": false,
+        "expected_outputs": [],
+        "timeout": 240,
+        "fallback": null
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "test:live"
+        ],
+        "purpose": "unit_test",
+        "source": "package.json:scripts",
+        "confidence": "HIGH",
+        "safe_to_run": true,
+        "requires_network": false,
+        "requires_credentials": false,
+        "expected_outputs": [],
+        "timeout": 240,
+        "fallback": null
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "build"
+        ],
+        "purpose": "build",
+        "source": "package.json:scripts",
+        "confidence": "HIGH",
+        "safe_to_run": true,
+        "requires_network": false,
+        "requires_credentials": false,
+        "expected_outputs": [],
+        "timeout": 600,
+        "fallback": null
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "start"
+        ],
+        "purpose": "package",
+        "source": "package.json:scripts",
+        "confidence": "HIGH",
+        "safe_to_run": false,
+        "requires_network": false,
+        "requires_credentials": false,
+        "expected_outputs": [],
+        "timeout": 240,
+        "fallback": null
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "start:worker"
+        ],
+        "purpose": "package",
+        "source": "package.json:scripts",
+        "confidence": "HIGH",
+        "safe_to_run": false,
+        "requires_network": false,
+        "requires_credentials": false,
+        "expected_outputs": [],
+        "timeout": 240,
+        "fallback": null
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "doctor"
+        ],
+        "purpose": "custom",
+        "source": "package.json:scripts",
+        "confidence": "HIGH",
+        "safe_to_run": false,
+        "requires_network": false,
+        "requires_credentials": false,
+        "expected_outputs": [],
+        "timeout": 240,
+        "fallback": null
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "fixture"
+        ],
+        "purpose": "custom",
+        "source": "package.json:scripts",
+        "confidence": "HIGH",
+        "safe_to_run": false,
+        "requires_network": false,
+        "requires_credentials": false,
+        "expected_outputs": [],
+        "timeout": 240,
+        "fallback": null
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "typecheck"
+        ],
+        "purpose": "typecheck",
+        "source": "package.json:scripts",
+        "confidence": "HIGH",
+        "safe_to_run": true,
+        "requires_network": false,
+        "requires_credentials": false,
+        "expected_outputs": [],
+        "timeout": 240,
+        "fallback": null
+      }
+    ],
+    "unknowns": [],
+    "confidence": 0.98,
+    "file_count_observed": 61
+  },
+  "environment": {
+    "status": "COMPLETE_WITH_WARNINGS",
+    "tools": {
+      "git": {
+        "status": "PASS",
+        "path": "/usr/bin/git",
+        "version": "UNTESTED"
+      },
+      "node": {
+        "status": "NOT_AVAILABLE",
+        "path": null,
+        "version": null
+      },
+      "npm": {
+        "status": "NOT_AVAILABLE",
+        "path": null,
+        "version": null
+      },
+      "python3": {
+        "status": "PASS",
+        "path": "/usr/bin/python3",
+        "version": "UNTESTED"
+      }
+    },
+    "declared_env_keys": {
+      "ADMIN_USER_IDS": "BLOCKED",
+      "AI_ARCHITECT_MODEL": "BLOCKED",
+      "AI_ARCHITECT_PROVIDER": "BLOCKED",
+      "AI_CODE_MODEL": "BLOCKED",
+      "AI_CODE_PROVIDER": "BLOCKED",
+      "AI_DEFAULT_MODEL": "BLOCKED",
+      "AI_DEFAULT_PROVIDER": "BLOCKED",
+      "AI_INTERVIEW_MODEL": "BLOCKED",
+      "AI_INTERVIEW_PROVIDER": "BLOCKED",
+      "AI_PROVIDER_DEFAULT_MODELS_JSON": "BLOCKED",
+      "AI_REVIEW_MODEL": "BLOCKED",
+      "AI_REVIEW_PROVIDER": "BLOCKED",
+      "ALLOW_LIVE_PAYMENTS": "BLOCKED",
+      "ALLOW_LOCAL_SUPABASE": "BLOCKED",
+      "ANTHROPIC_API_KEY": "BLOCKED",
+      "APP_NAME": "BLOCKED",
+      "APP_URL": "BLOCKED",
+      "ARTIFACT_BUCKET": "BLOCKED",
+      "AXDIA_INTERNAL_USE_ACK": "BLOCKED",
+      "BR360_ROOT": "BLOCKED",
+      "BUDGET_ADVANCED_USD": "BLOCKED",
+      "BUDGET_PRODUCTION_USD": "BLOCKED",
+      "BUDGET_STARTER_USD": "BLOCKED",
+      "CODE_MAX_OUTPUT_TOKENS": "BLOCKED",
+      "ENABLE_LOCAL_WORKSHOP": "BLOCKED",
+      "GITHUB_TOKEN": "BLOCKED",
+      "GOOGLE_GENERATIVE_AI_API_KEY": "BLOCKED",
+      "HOST": "BLOCKED",
+      "ISOLATED_WORKER_ACK": "BLOCKED",
+      "LOG_REQUESTS": "BLOCKED",
+      "MISTRAL_API_KEY": "BLOCKED",
+      "MODEL_CATALOG_OVERRIDES_JSON": "BLOCKED",
+      "NODE_ENV": "BLOCKED",
+      "OPENAI_API_KEY": "BLOCKED",
+      "OPENROUTER_API_KEY": "BLOCKED",
+      "PORT": "BLOCKED",
+      "RECURSIVE_ROOT": "BLOCKED",
+      "RELEASE_APPROVED": "BLOCKED",
+      "RUN_LIVE_CHECKS": "BLOCKED",
+      "SANDBOX_IMAGE": "BLOCKED",
+      "SANDBOX_PROVIDER": "BLOCKED",
+      "STRIPE_PRICE_ADVANCED": "BLOCKED",
+      "STRIPE_PRICE_PRODUCTION": "BLOCKED",
+      "STRIPE_PRICE_STARTER": "BLOCKED",
+      "STRIPE_SECRET_KEY": "BLOCKED",
+      "STRIPE_WEBHOOK_SECRET": "BLOCKED",
+      "SUPABASE_ANON_KEY": "BLOCKED",
+      "SUPABASE_SERVICE_ROLE_KEY": "<REDACTED>",
+      "SUPABASE_URL": "BLOCKED",
+      "WORKER_HOST": "BLOCKED",
+      "WORKER_PORT": "BLOCKED"
+    },
+    "missing_tools": [
+      "node",
+      "npm"
+    ],
+    "disk": {
+      "free_bytes": 31649157120,
+      "status": "PASS"
+    },
+    "note": "Environment variable names may be reported; secret values are never emitted."
+  },
+  "adapters": [
+    {
+      "id": "node",
+      "match_stack": [
+        "Node.js",
+        "npm",
+        "pnpm",
+        "yarn",
+        "bun",
+        "React",
+        "Next.js",
+        "Vue",
+        "Vite",
+        "Svelte"
+      ],
+      "match_languages": [
+        "JavaScript",
+        "TypeScript"
+      ],
+      "match_surfaces": [
+        "web",
+        "backend_api"
+      ],
+      "capabilities": [
+        "package_scripts",
+        "lint",
+        "typecheck",
+        "unit_test",
+        "integration_test",
+        "e2e",
+        "build",
+        "runtime",
+        "security",
+        "package"
+      ],
+      "limitations": [
+        "Dependency installation is never silently performed.",
+        "Provider-backed tests remain BLOCKED without credentials."
+      ]
+    },
+    {
+      "id": "python",
+      "match_stack": [
+        "Python",
+        "FastAPI",
+        "Flask",
+        "Django"
+      ],
+      "match_languages": [
+        "Python"
+      ],
+      "match_surfaces": [
+        "backend_api"
+      ],
+      "capabilities": [
+        "syntax",
+        "unit_test",
+        "integration_test",
+        "runtime",
+        "security",
+        "package"
+      ],
+      "limitations": [
+        "Virtualenv creation and package installation require explicit operator action or a project-native command."
+      ]
+    },
+    {
+      "id": "electron",
+      "match_stack": [
+        "Electron"
+      ],
+      "match_languages": [
+        "JavaScript",
+        "TypeScript"
+      ],
+      "match_surfaces": [
+        "desktop"
+      ],
+      "capabilities": [
+        "main_preload_renderer_review",
+        "ipc_review",
+        "build",
+        "package",
+        "startup",
+        "filesystem_permissions"
+      ],
+      "limitations": [
+        "Installer and OS-specific validation require the relevant OS/toolchain."
+      ]
+    },
+    {
+      "id": "docker",
+      "match_stack": [
+        "Docker",
+        "Docker Compose"
+      ],
+      "match_languages": [],
+      "match_surfaces": [],
+      "capabilities": [
+        "dockerfile_review",
+        "compose_review",
+        "container_configuration",
+        "supply_chain"
+      ],
+      "limitations": [
+        "Images are not pulled or built when network policy forbids it."
+      ]
+    },
+    {
+      "id": "database",
+      "match_stack": [
+        "Supabase",
+        "Firebase",
+        "PostgreSQL",
+        "SQLite"
+      ],
+      "match_languages": [
+        "SQL"
+      ],
+      "match_surfaces": [
+        "backend_api"
+      ],
+      "capabilities": [
+        "schema_fingerprint",
+        "migration_review",
+        "authorization_review",
+        "persistence_gate"
+      ],
+      "limitations": [
+        "Live database claims require sandbox/staging evidence."
+      ]
+    }
+  ],
+  "specialists": [
+    {
+      "id": "sandbox_env",
+      "name": "RECURSIVE Sandbox & Environment OS",
+      "version": "1.0.0",
+      "vendor_path": "frameworks/sandbox-environment",
+      "version_file": null,
+      "wrapper_prompt": "specialists/wrappers/sandbox_env_v1.md",
+      "mutating": false,
+      "capabilities": [
+        "sandbox",
+        "Docker",
+        "devcontainer",
+        "Nix",
+        "Dagger",
+        "resource isolation"
+      ]
+    },
+    {
+      "id": "durable_execution",
+      "name": "RECURSIVE Durable Execution OS",
+      "version": "1.0.0",
+      "vendor_path": "frameworks/durable-execution",
+      "version_file": null,
+      "wrapper_prompt": "specialists/wrappers/durable_execution_v1.md",
+      "mutating": false,
+      "capabilities": [
+        "WAL",
+        "idempotency",
+        "crash recovery",
+        "compensation"
+      ]
+    },
+    {
+      "id": "agent_interop",
+      "name": "RECURSIVE Agent Interop OS",
+      "version": "1.0.0",
+      "vendor_path": "frameworks/agent-interop",
+      "version_file": null,
+      "wrapper_prompt": "specialists/wrappers/agent_interop_v1.md",
+      "mutating": false,
+      "capabilities": [
+        "ACP",
+        "MCP",
+        "Codex",
+        "Claude",
+        "Gemini",
+        "OpenHands"
+      ]
+    },
+    {
+      "id": "security_fullstack",
+      "name": "RECURSIVE Security Full-Stack OS",
+      "version": "1.0.0",
+      "vendor_path": "frameworks/security-fullstack",
+      "version_file": null,
+      "wrapper_prompt": "specialists/wrappers/security_fullstack_v1.md",
+      "mutating": false,
+      "capabilities": [
+        "Semgrep",
+        "OSV",
+        "Trivy",
+        "SBOM",
+        "licenses",
+        "attestations"
+      ]
+    },
+    {
+      "id": "real_world",
+      "name": "RECURSIVE Real-World Verification OS",
+      "version": "1.0.0",
+      "vendor_path": "frameworks/real-world-verification",
+      "version_file": null,
+      "wrapper_prompt": "specialists/wrappers/real_world_v1.md",
+      "mutating": false,
+      "capabilities": [
+        "Playwright",
+        "browser",
+        "device",
+        "staging"
+      ]
+    },
+    {
+      "id": "cloud_iac",
+      "name": "RECURSIVE Cloud/IaC/DevOps + Policy OS",
+      "version": "1.0.0",
+      "vendor_path": "frameworks/cloud-iac-devops-policy",
+      "version_file": null,
+      "wrapper_prompt": "specialists/wrappers/cloud_iac_v1.md",
+      "mutating": false,
+      "capabilities": [
+        "OpenTofu",
+        "Terraform",
+        "Kubernetes",
+        "Helm",
+        "OPA",
+        "serverless"
+      ]
+    },
+    {
+      "id": "data_db",
+      "name": "RECURSIVE Data & Database OS",
+      "version": "1.0.0",
+      "vendor_path": "frameworks/data-database",
+      "version_file": null,
+      "wrapper_prompt": "specialists/wrappers/data_db_v1.md",
+      "mutating": false,
+      "capabilities": [
+        "database",
+        "migrations",
+        "data quality",
+        "Great Expectations"
+      ]
+    },
+    {
+      "id": "perf_obs",
+      "name": "RECURSIVE Performance/Chaos/Observability OS",
+      "version": "1.0.0",
+      "vendor_path": "frameworks/performance-chaos-observability",
+      "version_file": null,
+      "wrapper_prompt": "specialists/wrappers/perf_obs_v1.md",
+      "mutating": false,
+      "capabilities": [
+        "k6",
+        "Locust",
+        "Chaos Mesh",
+        "OpenTelemetry"
+      ]
+    },
+    {
+      "id": "release_ip",
+      "name": "RECURSIVE Release/License/IP OS",
+      "version": "1.0.0",
+      "vendor_path": "frameworks/release-license-ip",
+      "version_file": null,
+      "wrapper_prompt": "specialists/wrappers/release_ip_v1.md",
+      "mutating": false,
+      "capabilities": [
+        "EULA",
+        "license inventory",
+        "third-party notices",
+        "commercial distribution gate"
+      ]
+    }
+  ]
+}

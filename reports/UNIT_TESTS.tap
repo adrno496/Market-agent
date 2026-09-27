@@ -1,0 +1,646 @@
+
+> agentforge@0.1.0 test
+> node --experimental-strip-types --test tests/*.test.ts
+
+TAP version 13
+# (node:2722) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: initial objective confirmed, inferred domain not confirmed
+ok 1 - initial objective confirmed, inferred domain not confirmed
+  ---
+  duration_ms: 3.87918
+  type: 'test'
+  ...
+# Subtest: one next question at a time
+ok 2 - one next question at a time
+  ---
+  duration_ms: 4.812768
+  type: 'test'
+  ...
+# Subtest: explicit answer advances without changing original spec
+ok 3 - explicit answer advances without changing original spec
+  ---
+  duration_ms: 0.53721
+  type: 'test'
+  ...
+# Subtest: unknown remains proposed until explicit confirmation
+ok 4 - unknown remains proposed until explicit confirmation
+  ---
+  duration_ms: 0.657698
+  type: 'test'
+  ...
+# Subtest: cannot confirm a modified default
+ok 5 - cannot confirm a modified default
+  ---
+  duration_ms: 0.79298
+  type: 'test'
+  ...
+# Subtest: no invented default for a critical permission
+ok 6 - no invented default for a critical permission
+  ---
+  duration_ms: 0.253964
+  type: 'test'
+  ...
+# Subtest: AI cannot overwrite confirmed user objective
+ok 7 - AI cannot overwrite confirmed user objective
+  ---
+  duration_ms: 5.246845
+  type: 'test'
+  ...
+# Subtest: AIQuestionEngine invokes a provider but does not confer approval
+ok 8 - AIQuestionEngine invokes a provider but does not confer approval
+  ---
+  duration_ms: 9.273036
+  type: 'test'
+  ...
+# Subtest: schema rejects forged confirmation
+ok 9 - schema rejects forged confirmation
+  ---
+  duration_ms: 0.482059
+  type: 'test'
+  ...
+# Subtest: schema rejects unknown fields
+ok 10 - schema rejects unknown fields
+  ---
+  duration_ms: 0.504536
+  type: 'test'
+  ...
+# Subtest: schema rejects malformed UUID
+ok 11 - schema rejects malformed UUID
+  ---
+  duration_ms: 0.241999
+  type: 'test'
+  ...
+# Subtest: complete salon fixture answers 10 questions
+ok 12 - complete salon fixture answers 10 questions
+  ---
+  duration_ms: 0.970937
+  type: 'test'
+  ...
+# Subtest: question evaluation fixture: prospecting
+ok 13 - question evaluation fixture: prospecting
+  ---
+  duration_ms: 0.935301
+  type: 'test'
+  ...
+# Subtest: question evaluation fixture: support
+ok 14 - question evaluation fixture: support
+  ---
+  duration_ms: 0.088769
+  type: 'test'
+  ...
+# Subtest: question evaluation fixture: ecommerce
+ok 15 - question evaluation fixture: ecommerce
+  ---
+  duration_ms: 0.075067
+  type: 'test'
+  ...
+# Subtest: question evaluation fixture: research
+ok 16 - question evaluation fixture: research
+  ---
+  duration_ms: 0.070729
+  type: 'test'
+  ...
+# Subtest: question evaluation fixture: coding
+ok 17 - question evaluation fixture: coding
+  ---
+  duration_ms: 0.070609
+  type: 'test'
+  ...
+# Subtest: canonical hashes independent of key insertion order
+ok 18 - canonical hashes independent of key insertion order
+  ---
+  duration_ms: 0.686508
+  type: 'test'
+  ...
+# Subtest: canonical rejects undefined
+ok 19 - canonical rejects undefined
+  ---
+  duration_ms: 0.10813
+  type: 'test'
+  ...
+# Subtest: reject path ../a
+ok 20 - reject path ../a
+  ---
+  duration_ms: 0.182677
+  type: 'test'
+  ...
+# Subtest: reject path /etc/passwd
+ok 21 - reject path /etc/passwd
+  ---
+  duration_ms: 0.131993
+  type: 'test'
+  ...
+# Subtest: reject path a/../b
+ok 22 - reject path a/../b
+  ---
+  duration_ms: 0.212175
+  type: 'test'
+  ...
+# Subtest: reject path a//b
+ok 23 - reject path a//b
+  ---
+  duration_ms: 0.11157
+  type: 'test'
+  ...
+# Subtest: reject path a\\b
+ok 24 - reject path a\\b
+  ---
+  duration_ms: 0.054782
+  type: 'test'
+  ...
+# Subtest: reject path .git/config
+ok 25 - reject path .git/config
+  ---
+  duration_ms: 0.315552
+  type: 'test'
+  ...
+# Subtest: reject path node_modules/x.js
+ok 26 - reject path node_modules/x.js
+  ---
+  duration_ms: 0.065784
+  type: 'test'
+  ...
+# Subtest: reject path .env
+ok 27 - reject path .env
+  ---
+  duration_ms: 0.071836
+  type: 'test'
+  ...
+# Subtest: reject path .env.production
+ok 28 - reject path .env.production
+  ---
+  duration_ms: 0.091148
+  type: 'test'
+  ...
+# Subtest: reject path a/.ssh/id
+ok 29 - reject path a/.ssh/id
+  ---
+  duration_ms: 0.052718
+  type: 'test'
+  ...
+# Subtest: reject path AUX.txt
+ok 30 - reject path AUX.txt
+  ---
+  duration_ms: 0.114076
+  type: 'test'
+  ...
+# Subtest: reject path a./b
+ok 31 - reject path a./b
+  ---
+  duration_ms: 0.056209
+  type: 'test'
+  ...
+# Subtest: reject path a%2Fb
+ok 32 - reject path a%2Fb
+  ---
+  duration_ms: 0.042201
+  type: 'test'
+  ...
+# Subtest: reject path é.txt
+ok 33 - reject path é.txt
+  ---
+  duration_ms: 0.039427
+  type: 'test'
+  ...
+# Subtest: allows safe env template and Agent Skills path
+ok 34 - allows safe env template and Agent Skills path
+  ---
+  duration_ms: 0.074729
+  type: 'test'
+  ...
+# Subtest: reject case collisions and file-directory collisions
+ok 35 - reject case collisions and file-directory collisions
+  ---
+  duration_ms: 0.452496
+  type: 'test'
+  ...
+# Subtest: reject non-string binary contents and large file
+ok 36 - reject non-string binary contents and large file
+  ---
+  duration_ms: 1.001553
+  type: 'test'
+  ...
+# Subtest: secret values blocked, placeholders allowed
+ok 37 - secret values blocked, placeholders allowed
+  ---
+  duration_ms: 0.841247
+  type: 'test'
+  ...
+# Subtest: known secret values rejected even without a prefix
+ok 38 - known secret values rejected even without a prefix
+  ---
+  duration_ms: 0.371236
+  type: 'test'
+  ...
+# Subtest: real ZIP is deterministic and CRC validates
+ok 39 - real ZIP is deterministic and CRC validates
+  ---
+  duration_ms: 2.979272
+  type: 'test'
+  ...
+# Subtest: ZIP report checksums match every entry except their own file
+ok 40 - ZIP report checksums match every entry except their own file
+  ---
+  duration_ms: 1.355005
+  type: 'test'
+  ...
+# Subtest: untrusted report injection blocked
+ok 41 - untrusted report injection blocked
+  ---
+  duration_ms: 0.205212
+  type: 'test'
+  ...
+# Subtest: static check never passes missing project structure
+ok 42 - static check never passes missing project structure
+  ---
+  duration_ms: 0.585088
+  type: 'test'
+  ...
+# Subtest: incomplete local export fails
+ok 43 - incomplete local export fails
+  ---
+  duration_ms: 0.285632
+  type: 'test'
+  ...
+# Subtest: local ZIP explicitly states no generated agent and no executed audits
+ok 44 - local ZIP explicitly states no generated agent and no executed audits
+  ---
+  duration_ms: 5.276041
+  type: 'test'
+  ...
+# Subtest: state machine rejects unpaid completion
+ok 45 - state machine rejects unpaid completion
+  ---
+  duration_ms: 0.170678
+  type: 'test'
+  ...
+# Subtest: state machine permits verification-repair cycle
+ok 46 - state machine permits verification-repair cycle
+  ---
+  duration_ms: 0.056195
+  type: 'test'
+  ...
+# Subtest: release requires all four actual proof records
+ok 47 - release requires all four actual proof records
+  ---
+  duration_ms: 0.461194
+  type: 'test'
+  ...
+# Subtest: contradictory duplicate PASS and BLOCK never unlock delivery
+ok 48 - contradictory duplicate PASS and BLOCK never unlock delivery
+  ---
+  duration_ms: 0.126096
+  type: 'test'
+  ...
+# Subtest: invalid timestamp and absent evidence block release
+ok 49 - invalid timestamp and absent evidence block release
+  ---
+  duration_ms: 0.080692
+  type: 'test'
+  ...
+# Subtest: BR360 PARTIAL maps to WARN, not PASS
+ok 50 - BR360 PARTIAL maps to WARN, not PASS
+  ---
+  duration_ms: 0.152771
+  type: 'test'
+  ...
+# Subtest: native PASS with unmet evidence is downgraded
+ok 51 - native PASS with unmet evidence is downgraded
+  ---
+  duration_ms: 0.061279
+  type: 'test'
+  ...
+# Subtest: unknown audit schemas and nonzero exits never pass
+ok 52 - unknown audit schemas and nonzero exits never pass
+  ---
+  duration_ms: 0.05792
+  type: 'test'
+  ...
+# Subtest: unconfigured sandbox returns explicit missing reports
+ok 53 - unconfigured sandbox returns explicit missing reports
+  ---
+  duration_ms: 0.440407
+  type: 'test'
+  ...
+# Subtest: Docker image must be pinned before any execution
+ok 54 - Docker image must be pinned before any execution
+  ---
+  duration_ms: 0.644961
+  type: 'test'
+  ...
+# Subtest: provider does not choose the agent framework
+ok 55 - provider does not choose the agent framework
+  ---
+  duration_ms: 0.307533
+  type: 'test'
+  ...
+# Subtest: stateful workflows select graph framework as proposal
+ok 56 - stateful workflows select graph framework as proposal
+  ---
+  duration_ms: 0.115667
+  type: 'test'
+  ...
+# Subtest: all required framework families included in resolver
+ok 57 - all required framework families included in resolver
+  ---
+  duration_ms: 0.382418
+  type: 'test'
+  ...
+# Subtest: immutable plan detects mutation
+ok 58 - immutable plan detects mutation
+  ---
+  duration_ms: 3.871762
+  type: 'test'
+  ...
+# Subtest: unverified sources do not produce a payable plan
+ok 59 - unverified sources do not produce a payable plan
+  ---
+  duration_ms: 0.797573
+  type: 'test'
+  ...
+# Subtest: unknown cost and expired price block model reservation
+ok 60 - unknown cost and expired price block model reservation
+  ---
+  duration_ms: 0.272483
+  type: 'test'
+  ...
+# Subtest: provider response JSON contract enforced
+ok 61 - provider response JSON contract enforced
+  ---
+  duration_ms: 0.21812
+  type: 'test'
+  ...
+# Subtest: correct Stripe raw body HMAC accepted, altered body rejected
+ok 62 - correct Stripe raw body HMAC accepted, altered body rejected
+  ---
+  duration_ms: 0.818964
+  type: 'test'
+  ...
+# Subtest: Stripe stale and duplicate timestamps rejected
+ok 63 - Stripe stale and duplicate timestamps rejected
+  ---
+  duration_ms: 0.163746
+  type: 'test'
+  ...
+# Subtest: reject SSRF or unsafe URL http://example.com
+ok 64 - reject SSRF or unsafe URL http://example.com
+  ---
+  duration_ms: 0.130014
+  type: 'test'
+  ...
+# Subtest: reject SSRF or unsafe URL https://127.0.0.1
+ok 65 - reject SSRF or unsafe URL https://127.0.0.1
+  ---
+  duration_ms: 0.344355
+  type: 'test'
+  ...
+# Subtest: reject SSRF or unsafe URL https://metadata.internal
+ok 66 - reject SSRF or unsafe URL https://metadata.internal
+  ---
+  duration_ms: 3.463462
+  type: 'test'
+  ...
+# Subtest: reject SSRF or unsafe URL https://user:pass@example.com
+ok 67 - reject SSRF or unsafe URL https://user:pass@example.com
+  ---
+  duration_ms: 0.098458
+  type: 'test'
+  ...
+# Subtest: reject SSRF or unsafe URL https://example.com:8443
+ok 68 - reject SSRF or unsafe URL https://example.com:8443
+  ---
+  duration_ms: 0.060217
+  type: 'test'
+  ...
+# Subtest: provider keys are not mandatory in local mode
+ok 69 - provider keys are not mandatory in local mode
+  ---
+  duration_ms: 0.270378
+  type: 'test'
+  ...
+# (node:2723) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: dependency manifests: exact framework version accepted
+ok 70 - dependency manifests: exact framework version accepted
+  ---
+  duration_ms: 1.803379
+  type: 'test'
+  ...
+# Subtest: dependency manifests: framework mismatch rejected
+ok 71 - dependency manifests: framework mismatch rejected
+  ---
+  duration_ms: 0.607286
+  type: 'test'
+  ...
+# Subtest: dependency manifests: reject unsafe dependency ^1.2.3
+ok 72 - dependency manifests: reject unsafe dependency ^1.2.3
+  ---
+  duration_ms: 0.426189
+  type: 'test'
+  ...
+# Subtest: dependency manifests: reject unsafe dependency https://evil.example/code.tgz
+ok 73 - dependency manifests: reject unsafe dependency https://evil.example/code.tgz
+  ---
+  duration_ms: 0.186303
+  type: 'test'
+  ...
+# Subtest: dependency manifests: reject unsafe dependency file:../../host
+ok 74 - dependency manifests: reject unsafe dependency file:../../host
+  ---
+  duration_ms: 0.149361
+  type: 'test'
+  ...
+# Subtest: dependency manifests: reject unsafe dependency git+https://github.com/example/repo.git
+ok 75 - dependency manifests: reject unsafe dependency git+https://github.com/example/repo.git
+  ---
+  duration_ms: 0.136578
+  type: 'test'
+  ...
+# Subtest: dependency manifests: install hook rejected
+ok 76 - dependency manifests: install hook rejected
+  ---
+  duration_ms: 0.2543
+  type: 'test'
+  ...
+# Subtest: dependency manifests: workspace replacement rejected
+ok 77 - dependency manifests: workspace replacement rejected
+  ---
+  duration_ms: 0.222749
+  type: 'test'
+  ...
+# Subtest: dependency manifests: Python exact versions accepted
+ok 78 - dependency manifests: Python exact versions accepted
+  ---
+  duration_ms: 0.840835
+  type: 'test'
+  ...
+# Subtest: dependency manifests: Python URL or index option rejected
+ok 79 - dependency manifests: Python URL or index option rejected
+  ---
+  duration_ms: 0.552022
+  type: 'test'
+  ...
+# Subtest: dependency manifests: Python framework mismatch rejected
+ok 80 - dependency manifests: Python framework mismatch rejected
+  ---
+  duration_ms: 1.427387
+  type: 'test'
+  ...
+# (node:2724) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: local HTTP: UI exists with CSP and no inline executable scripts
+ok 81 - local HTTP: UI exists with CSP and no inline executable scripts
+  ---
+  duration_ms: 373.01055
+  type: 'test'
+  ...
+# Subtest: local HTTP: liveness is not readiness
+ok 82 - local HTTP: liveness is not readiness
+  ---
+  duration_ms: 8.26659
+  type: 'test'
+  ...
+# Subtest: local HTTP: private collection requires authentication
+ok 83 - local HTTP: private collection requires authentication
+  ---
+  duration_ms: 10.309966
+  type: 'test'
+  ...
+# Subtest: local HTTP: forged browser payment has no authority
+ok 84 - local HTTP: forged browser payment has no authority
+  ---
+  duration_ms: 6.124362
+  type: 'test'
+  ...
+# Subtest: local HTTP: CSRF rejected before request processing
+ok 85 - local HTTP: CSRF rejected before request processing
+  ---
+  duration_ms: 2.270106
+  type: 'test'
+  ...
+# Subtest: local HTTP: GET cannot mutate local project
+ok 86 - local HTTP: GET cannot mutate local project
+  ---
+  duration_ms: 1.434537
+  type: 'test'
+  ...
+# Subtest: local HTTP: JSON required
+ok 87 - local HTTP: JSON required
+  ---
+  duration_ms: 3.188627
+  type: 'test'
+  ...
+# Subtest: local HTTP: unknown field rejected
+ok 88 - local HTTP: unknown field rejected
+  ---
+  duration_ms: 8.220747
+  type: 'test'
+  ...
+# Subtest: local HTTP: secret-looking input rejected
+ok 89 - local HTTP: secret-looking input rejected
+  ---
+  duration_ms: 2.428536
+  type: 'test'
+  ...
+# Subtest: local HTTP salon: idea -> ten answers -> actual framing ZIP, never a paid delivery
+ok 90 - local HTTP salon: idea -> ten answers -> actual framing ZIP, never a paid delivery
+  ---
+  duration_ms: 40.697238
+  type: 'test'
+  ...
+# Subtest: local HTTP: build progress is not fabricated when jobs absent
+ok 91 - local HTTP: build progress is not fabricated when jobs absent
+  ---
+  duration_ms: 1.470863
+  type: 'test'
+  ...
+# Subtest: local HTTP: body limit rejects before model calls
+ok 92 - local HTTP: body limit rejects before model calls
+  ---
+  duration_ms: 9.438347
+  type: 'test'
+  ...
+# Subtest: local HTTP: Railway probe host allowed only for read-only health endpoints
+ok 93 - local HTTP: Railway probe host allowed only for read-only health endpoints
+  ---
+  duration_ms: 11.503751
+  type: 'test'
+  ...
+# Subtest: local HTTP: arbitrary host rejected even on health endpoint
+ok 94 - local HTTP: arbitrary host rejected even on health endpoint
+  ---
+  duration_ms: 1.020598
+  type: 'test'
+  ...
+# (node:2755) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: HTTP adapter contract with fixture only: openrouter
+ok 95 - HTTP adapter contract with fixture only: openrouter
+  ---
+  duration_ms: 21.339266
+  type: 'test'
+  ...
+# Subtest: HTTP adapter contract with fixture only: openai
+ok 96 - HTTP adapter contract with fixture only: openai
+  ---
+  duration_ms: 0.831124
+  type: 'test'
+  ...
+# Subtest: HTTP adapter contract with fixture only: anthropic
+ok 97 - HTTP adapter contract with fixture only: anthropic
+  ---
+  duration_ms: 0.463172
+  type: 'test'
+  ...
+# Subtest: HTTP adapter contract with fixture only: mistral
+ok 98 - HTTP adapter contract with fixture only: mistral
+  ---
+  duration_ms: 0.409158
+  type: 'test'
+  ...
+# Subtest: HTTP adapter contract with fixture only: google
+ok 99 - HTTP adapter contract with fixture only: google
+  ---
+  duration_ms: 0.625189
+  type: 'test'
+  ...
+# Subtest: provider missing keys fails without HTTP
+ok 100 - provider missing keys fails without HTTP
+  ---
+  duration_ms: 0.873301
+  type: 'test'
+  ...
+# Subtest: Stripe browser does not supply entitlement or price: missing configuration blocks
+ok 101 - Stripe browser does not supply entitlement or price: missing configuration blocks
+  ---
+  duration_ms: 0.242951
+  type: 'test'
+  ...
+# Subtest: Stripe live mode explicitly locked by default
+ok 102 - Stripe live mode explicitly locked by default
+  ---
+  duration_ms: 0.302477
+  type: 'test'
+  ...
+# Subtest: Stripe unsigned webhook rejected before database writes
+ok 103 - Stripe unsigned webhook rejected before database writes
+  ---
+  duration_ms: 0.727771
+  type: 'test'
+  ...
+# Subtest: Stripe unconfigured signature key cannot silently authorize a webhook
+ok 104 - Stripe unconfigured signature key cannot silently authorize a webhook
+  ---
+  duration_ms: 0.451881
+  type: 'test'
+  ...
+1..104
+# tests 104
+# suites 0
+# pass 104
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 708.11982

@@ -1,0 +1,57 @@
+[
+  {
+    "name": "RECURSIVE_INSPECTION",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-B",
+      "/mnt/data/agentforge-audit/RECURSIVE/recursive.py",
+      "audit",
+      "/mnt/data/agentforge-selfaudit-final"
+    ],
+    "executed_at": "2026-09-27T18:32:20.180931+00:00",
+    "exit_code": 0,
+    "native_status": "NO_OVERALL_STATUS",
+    "duration_seconds": 0.9,
+    "scope": "read_only_inspection",
+    "source_execution_environment": "isolated construction container; no external credentials",
+    "target": "source snapshot excluding reports/dist/dependencies; manifest retained"
+  },
+  {
+    "name": "RECURSIVE_VERIFICATION",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-B",
+      "/mnt/data/agentforge-audit/RECURSIVE/recursive.py",
+      "verify",
+      "/mnt/data/agentforge-selfaudit-final",
+      "--no-cache"
+    ],
+    "executed_at": "2026-09-27T18:32:21.085504+00:00",
+    "exit_code": 1,
+    "native_status": "BLOCKED",
+    "duration_seconds": 2.37,
+    "scope": "tool_verification_without_host_execution_approval",
+    "source_execution_environment": "isolated construction container; no external credentials",
+    "target": "source snapshot excluding reports/dist/dependencies; manifest retained"
+  },
+  {
+    "name": "BR360_SELF_AUDIT",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-B",
+      "/mnt/data/agentforge-audit/02_AXDIA_BUSINESS_READINESS_360/REPO_READY_axdia-business-readiness-360/runtime/br360_engine.py",
+      "audit",
+      "--project",
+      "/mnt/data/agentforge-selfaudit-final",
+      "--out",
+      "/mnt/data/agentforge/reports/axdia/BR360_SELF_AUDIT_RAW.json"
+    ],
+    "executed_at": "2026-09-27T18:32:23.457991+00:00",
+    "exit_code": 0,
+    "native_status": "FAIL",
+    "duration_seconds": 1.12,
+    "scope": "tool_verification_without_host_execution_approval",
+    "source_execution_environment": "isolated construction container; no external credentials",
+    "target": "source snapshot excluding reports/dist/dependencies; manifest retained"
+  }
+]

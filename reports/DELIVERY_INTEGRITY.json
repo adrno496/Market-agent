@@ -1,0 +1,20 @@
+{
+  "verified_at": "2026-09-27T18:33:14.806332+00:00",
+  "scope": "LOCAL_DELIVERY_INTEGRITY_NOT_PRODUCTION_RELEASE",
+  "test_count": 104,
+  "tests_passed": 104,
+  "typecheck": "PASS",
+  "compiled_js_syntax": "PASS",
+  "checked_js_files": 19,
+  "parsed_json_files": 23,
+  "salon_project_schema": "PASS",
+  "nested_zip_crc": "PASS",
+  "audited_source_matches_delivery": "PASS",
+  "proprietary_engine_sources_included": false,
+  "runtime_secrets_included": false,
+  "note": "No .env or platform credentials were created; synthetic token strings occur only in tests. Secret detection is not an exhaustive security certification.",
+  "native_browser_e2e": "BLOCKED",
+  "recursive": "BLOCKED",
+  "br360": "FAIL",
+  "commercial_release": "BLOCKED"
+}

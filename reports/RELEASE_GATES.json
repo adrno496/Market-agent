@@ -1,0 +1,66 @@
+{
+  "evaluated_at": "2026-09-27T18:32:00.154954+00:00",
+  "release": "BLOCKED",
+  "gates": [
+    {
+      "id": "G0",
+      "name": "structure",
+      "status": "PASS",
+      "evidence": "Source autonome, séparation web/worker/cœur ; aucun code des moteurs embarqué."
+    },
+    {
+      "id": "G1",
+      "name": "syntax",
+      "status": "PASS",
+      "evidence": "Build TS vers JS effectué et tests Node exécutés."
+    },
+    {
+      "id": "G2",
+      "name": "types/lint",
+      "status": "PARTIAL",
+      "evidence": "tsc strict PASS ; pas de moteur de lint indépendant configuré."
+    },
+    {
+      "id": "G3",
+      "name": "unit/contract/local HTTP",
+      "status": "PASS",
+      "evidence": "104 tests, 104 réussis, aucun ignoré ; services distants remplacés par fixtures uniquement dans les tests."
+    },
+    {
+      "id": "G4",
+      "name": "integration",
+      "status": "PARTIAL",
+      "evidence": "HTTP local et contrats adaptateurs PASS ; DB/Stripe/modèles/sandbox réels NOT_AVAILABLE."
+    },
+    {
+      "id": "G5",
+      "name": "E2E",
+      "status": "BLOCKED",
+      "evidence": "Chromium natif bloque localhost ; 6 contrôles DOM via pont HTTP local PASS, pas le scénario commercial."
+    },
+    {
+      "id": "G6",
+      "name": "production build",
+      "status": "PARTIAL",
+      "evidence": "Build JavaScript PASS ; image Docker et déploiement non exécutés."
+    },
+    {
+      "id": "G7",
+      "name": "auth/payment real paths",
+      "status": "NOT_AVAILABLE",
+      "evidence": "Aucun compte Supabase ni paiement Stripe test configuré."
+    },
+    {
+      "id": "G8",
+      "name": "security verification",
+      "status": "FAIL",
+      "evidence": "Régressions locales PASS ; RECURSIVE BLOCKED et BR360 FAIL. Aucune certification sécurité."
+    },
+    {
+      "id": "G9",
+      "name": "final release review",
+      "status": "BLOCKED",
+      "evidence": "Definition of Done commerciale incomplète ; ne pas ouvrir aux paiements réels."
+    }
+  ]
+}

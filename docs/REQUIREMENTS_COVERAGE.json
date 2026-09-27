@@ -1,0 +1,566 @@
+{
+  "version": "0.1.0",
+  "scope": "implementation_candidate_not_production_certification",
+  "requirements": [
+    {
+      "requirement": 1,
+      "title": "OBJECTIF PRODUIT",
+      "status": "PARTIAL",
+      "paths": "apps/web, packages/core",
+      "assessment": "Cadrage local utilisable ; parcours commercial complet non exécuté."
+    },
+    {
+      "requirement": 2,
+      "title": "OUTILS AXDIA À EXPLOITER",
+      "status": "LOCAL_VERIFIED",
+      "paths": "docs/audit/EXISTING_TOOLS_AUDIT.md",
+      "assessment": "Archives inspectées, principes FORMATION réimplémentés sans reprendre son code."
+    },
+    {
+      "requirement": 3,
+      "title": "UTILISATION DE RECURSIVE",
+      "status": "IMPLEMENTED_NOT_LIVE_VALIDATED",
+      "paths": "packages/core/sandbox.ts",
+      "assessment": "Adaptateur réel ; auto-audit exécuté avec résultat BLOCKED, génération isolée non validée."
+    },
+    {
+      "requirement": 4,
+      "title": "UTILISATION DE BR360",
+      "status": "IMPLEMENTED_NOT_LIVE_VALIDATED",
+      "paths": "packages/core/sandbox.ts",
+      "assessment": "Rapports natifs conservés ; auto-audit FAIL, aucun audit client réel."
+    },
+    {
+      "requirement": 5,
+      "title": "RECHERCHE GITHUB OBLIGATOIRE",
+      "status": "PARTIAL",
+      "paths": "docs/research",
+      "assessment": "Sept projets officiels étudiés ; aucune version téléchargée/installée certifiée ici."
+    },
+    {
+      "requirement": 6,
+      "title": "GITHUB SKILL RESOLVER",
+      "status": "PARTIAL",
+      "paths": "packages/core/research.ts",
+      "assessment": "Découverte réelle de candidats ; sélection et intégration opérationnelle d’un skill non certifiées."
+    },
+    {
+      "requirement": 7,
+      "title": "SÉCURITÉ DE LA RECHERCHE GITHUB",
+      "status": "PARTIAL",
+      "paths": "packages/core/research.ts, security.ts",
+      "assessment": "Sources traitées en données, URLs fixes, pas de clone/exécution dans le serveur ; red team sémantique non réalisée."
+    },
+    {
+      "requirement": 8,
+      "title": "PROVENANCE ET LICENCES",
+      "status": "PARTIAL",
+      "paths": "packages/core/research.ts, packaging.ts",
+      "assessment": "Métadonnées, licence, version et provenance ; licence globale du produit non décidée et pas de revue juridique."
+    },
+    {
+      "requirement": 9,
+      "title": "EXPÉRIENCE UTILISATEUR PRINCIPALE",
+      "status": "LOCAL_VERIFIED",
+      "paths": "apps/web/public",
+      "assessment": "Saisie simple, test DOM et HTTP ; navigation navigateur native limitée ici."
+    },
+    {
+      "requirement": 10,
+      "title": "INTERVIEW IA",
+      "status": "PARTIAL",
+      "paths": "packages/core/interview.ts, spec.ts",
+      "assessment": "Extraction IA initiale optionnelle et questions par règles ; pas d’entretien IA adaptatif multi-tour validé en réel."
+    },
+    {
+      "requirement": 11,
+      "title": "RÈGLES DU QUESTION ENGINE",
+      "status": "LOCAL_VERIFIED",
+      "paths": "packages/core/spec.ts",
+      "assessment": "Une question utile à la fois, inconnus distincts et confirmation explicite des valeurs proposées."
+    },
+    {
+      "requirement": 12,
+      "title": "PROJECT SPEC",
+      "status": "LOCAL_VERIFIED",
+      "paths": "schemas/ProjectSpec.schema.json, packages/core/spec.ts",
+      "assessment": "Schéma et validateur originaux ; les données critiques conservent leur provenance."
+    },
+    {
+      "requirement": 13,
+      "title": "ÉTATS PROJET",
+      "status": "PARTIAL",
+      "paths": "packages/core/states.ts, supabase/migrations",
+      "assessment": "Carte de transitions et gardes SQL ; machine persistée/concurrence non exercées sur PostgreSQL."
+    },
+    {
+      "requirement": 14,
+      "title": "FRAMEWORK SELECTOR",
+      "status": "LOCAL_VERIFIED",
+      "paths": "packages/core/research.ts",
+      "assessment": "Sélecteur heuristique testé ; confiance non calibrée statistiquement."
+    },
+    {
+      "requirement": 15,
+      "title": "RÈGLES DE SÉLECTION",
+      "status": "LOCAL_VERIFIED",
+      "paths": "packages/core/research.ts",
+      "assessment": "Heuristiques explicites, modèle et framework séparés ; pas de garantie de meilleur choix universel."
+    },
+    {
+      "requirement": 16,
+      "title": "PROVIDER GATEWAY",
+      "status": "IMPLEMENTED_NOT_LIVE_VALIDATED",
+      "paths": "packages/core/providers.ts",
+      "assessment": "Cinq adaptateurs HTTP réels ; contrats testés par fixtures, pas d’appel distant."
+    },
+    {
+      "requirement": 17,
+      "title": "OPENROUTER",
+      "status": "LOCAL_VERIFIED",
+      "paths": "packages/core/config.ts",
+      "assessment": "OpenRouter par défaut, fournisseurs alternatifs sélectionnables."
+    },
+    {
+      "requirement": 18,
+      "title": "CHOIX DU MODÈLE",
+      "status": "PARTIAL",
+      "paths": "apps/web/public/app.js, packages/core/providers.ts",
+      "assessment": "Sélection fournisseur/modèle ; rôles ARCHITECT et REVIEW distincts non exécutés."
+    },
+    {
+      "requirement": 19,
+      "title": "NE PAS CODER LES MODÈLES EN DUR",
+      "status": "IMPLEMENTED_NOT_LIVE_VALIDATED",
+      "paths": "packages/core/providers.ts",
+      "assessment": "Catalogues dynamiques, cache et overrides ; catalogues réels non interrogés par l’application ici."
+    },
+    {
+      "requirement": 20,
+      "title": ".ENV DE LA PLATEFORME",
+      "status": "LOCAL_VERIFIED",
+      "paths": ".env.example",
+      "assessment": "Variables effectivement utilisées documentées ; celles réservées sont signalées."
+    },
+    {
+      "requirement": 21,
+      "title": "RÈGLE ABSOLUE SUR LES SECRETS",
+      "status": "PARTIAL",
+      "paths": "packages/core/security.ts, apps/web",
+      "assessment": "Pas de secrets d’exécution livrés ; scanner heuristique testé, pas de certification exhaustive."
+    },
+    {
+      "requirement": 22,
+      "title": "DEUX TYPES DE .ENV",
+      "status": "LOCAL_VERIFIED",
+      "paths": ".env.example, packages/core/workshop.ts",
+      "assessment": "Configuration plateforme distincte des placeholders du projet."
+    },
+    {
+      "requirement": 23,
+      "title": ".ENV DU PROJET GÉNÉRÉ",
+      "status": "LOCAL_VERIFIED",
+      "paths": "packages/core/generation.ts, workshop.ts",
+      "assessment": "Template sans secret ; obligation limitée au fournisseur sélectionné."
+    },
+    {
+      "requirement": 24,
+      "title": "BUILD PLAN",
+      "status": "LOCAL_VERIFIED",
+      "paths": "packages/core/research.ts",
+      "assessment": "BuildPlan immuable et hashé, prix et limites figés ; persistance non testée en réel."
+    },
+    {
+      "requirement": 25,
+      "title": "GENERATION ENGINE",
+      "status": "PARTIAL",
+      "paths": "packages/core/generation.ts",
+      "assessment": "Orchestration écrite ; aucun framework client généré et lancé dans cette session."
+    },
+    {
+      "requirement": 26,
+      "title": "WORKSPACE ISOLÉ",
+      "status": "IMPLEMENTED_NOT_LIVE_VALIDATED",
+      "paths": "packages/core/generation.ts, sandbox.ts",
+      "assessment": "Workspace séparé par job ; isolation Docker non exercée ici."
+    },
+    {
+      "requirement": 27,
+      "title": "SANDBOX",
+      "status": "PARTIAL",
+      "paths": "packages/core/sandbox.ts",
+      "assessment": "Driver Docker local et interface ; aucun fournisseur sandbox distant livré."
+    },
+    {
+      "requirement": 28,
+      "title": "POLITIQUE SANDBOX",
+      "status": "IMPLEMENTED_NOT_LIVE_VALIDATED",
+      "paths": "packages/core/sandbox.ts",
+      "assessment": "Réseau coupé, limites et image épinglée ; Docker absent de l’environnement."
+    },
+    {
+      "requirement": 29,
+      "title": "REPAIR LOOP",
+      "status": "IMPLEMENTED_NOT_LIVE_VALIDATED",
+      "paths": "packages/core/generation.ts",
+      "assessment": "Boucle bornée et budgets ; aucune réparation réelle par modèle."
+    },
+    {
+      "requirement": 30,
+      "title": "CONTENU DU ZIP",
+      "status": "PARTIAL",
+      "paths": "packages/core/packaging.ts",
+      "assessment": "Vrai ZIP, checksums et rapports ; BUILD_REPORT/DEPENDENCIES complets et SBOM non produits."
+    },
+    {
+      "requirement": 31,
+      "title": "AGENT SKILLS",
+      "status": "PARTIAL",
+      "paths": "packages/core/packaging.ts",
+      "assessment": "Structure SKILL.md et validation de base ; conformité complète Agent Skills non certifiée."
+    },
+    {
+      "requirement": 32,
+      "title": "MCP",
+      "status": "PARTIAL",
+      "paths": "packages/core/research.ts",
+      "assessment": "Consultation du registre prévue, candidats non assimilés à des serveurs sûrs ; aucune session MCP métier réelle."
+    },
+    {
+      "requirement": 33,
+      "title": "PROJET EXEMPLE OBLIGATOIRE",
+      "status": "PARTIAL",
+      "paths": "fixtures/salon.ts, reports/fixtures",
+      "assessment": "Salon testé jusqu’au ZIP de cadrage seulement, pas au ZIP d’un agent opérationnel."
+    },
+    {
+      "requirement": 34,
+      "title": "PAIEMENT",
+      "status": "IMPLEMENTED_NOT_LIVE_VALIDATED",
+      "paths": "packages/core/payments.ts",
+      "assessment": "Checkout et signature webhook ; aucun paiement test réellement effectué."
+    },
+    {
+      "requirement": 35,
+      "title": "PRICING À IMPLÉMENTER",
+      "status": "PARTIAL",
+      "paths": "packages/core/payments.ts, DEPLOYMENT.md",
+      "assessment": "Trois niveaux/limites ; prix à créer dans Stripe, pas de faux prix présentés comme actifs."
+    },
+    {
+      "requirement": 36,
+      "title": "NE PAS CODER LES PRIX EN DUR",
+      "status": "IMPLEMENTED_NOT_LIVE_VALIDATED",
+      "paths": "packages/core/payments.ts, supabase/migrations",
+      "assessment": "Price IDs configurables et snapshot ; configuration Stripe réelle absente."
+    },
+    {
+      "requirement": 37,
+      "title": "APERÇU GRATUIT",
+      "status": "LOCAL_VERIFIED",
+      "paths": "apps/web/public, packages/core/workshop.ts",
+      "assessment": "Aperçu sans code complet, export local explicitement limité au cadrage."
+    },
+    {
+      "requirement": 38,
+      "title": "COMPTE CLIENT",
+      "status": "PARTIAL",
+      "paths": "apps/web/server.ts, apps/web/public",
+      "assessment": "Auth/projets/générations/paiements et récupération écrits ; parcours utilisateur connecté non testé."
+    },
+    {
+      "requirement": 39,
+      "title": "DATABASE",
+      "status": "IMPLEMENTED_NOT_LIVE_VALIDATED",
+      "paths": "supabase/migrations",
+      "assessment": "Migration SQL et entités présentes ; aucune migration exécutée sur Supabase."
+    },
+    {
+      "requirement": 40,
+      "title": "RLS",
+      "status": "IMPLEMENTED_NOT_LIVE_VALIDATED",
+      "paths": "supabase/migrations",
+      "assessment": "RLS propriétaire et RPC service-only ; tests réels utilisateur A/B manquants."
+    },
+    {
+      "requirement": 41,
+      "title": "ARTIFACT STORAGE",
+      "status": "IMPLEMENTED_NOT_LIVE_VALIDATED",
+      "paths": "packages/core/database.ts",
+      "assessment": "Bucket privé, URL signée et contrôle du droit ; aucun vrai stockage distant créé."
+    },
+    {
+      "requirement": 42,
+      "title": "JOB QUEUE",
+      "status": "IMPLEMENTED_NOT_LIVE_VALIDATED",
+      "paths": "apps/worker/main.ts, supabase/migrations",
+      "assessment": "File PostgreSQL, baux, événements ; pas de Redis fictif, pas de job connecté exécuté."
+    },
+    {
+      "requirement": 43,
+      "title": "IDEMPOTENCE",
+      "status": "PARTIAL",
+      "paths": "packages/core/payments.ts, supabase/migrations",
+      "assessment": "Contraintes et fonctions idempotentes ; courses concurrentes DB/Stripe non testées."
+    },
+    {
+      "requirement": 44,
+      "title": "GENERATION EVENTS",
+      "status": "IMPLEMENTED_NOT_LIVE_VALIDATED",
+      "paths": "packages/core/generation.ts, apps/web/server.ts",
+      "assessment": "Événements persistés et SSE ; pas de progression commerciale fabriquée."
+    },
+    {
+      "requirement": 45,
+      "title": "INTERFACE BUILD",
+      "status": "PARTIAL",
+      "paths": "apps/web/public/app.js",
+      "assessment": "Vue de progression liée aux événements réels ; pas de génération connectée visualisée."
+    },
+    {
+      "requirement": 46,
+      "title": "PAGE RÉSULTAT",
+      "status": "PARTIAL",
+      "paths": "apps/web/public/app.js",
+      "assessment": "Collections et rapports prévus ; page finale d’un build réel non validée."
+    },
+    {
+      "requirement": 47,
+      "title": "PREVIEW DU ZIP",
+      "status": "PARTIAL",
+      "paths": "apps/web/public/app.js",
+      "assessment": "Manifest/artifacts exposés après autorisation ; explorateur complet avec visualisation par fichier incomplet."
+    },
+    {
+      "requirement": 48,
+      "title": "UI",
+      "status": "LOCAL_VERIFIED",
+      "paths": "apps/web/public, reports/browser",
+      "assessment": "Desktop/mobile vérifiés par DOM et transport local ; pas de navigateur natif de bout en bout."
+    },
+    {
+      "requirement": 49,
+      "title": "STACK WEB CONSEILLÉE",
+      "status": "PARTIAL",
+      "paths": "ARCHITECTURE.md, README.md",
+      "assessment": "Écart : Node HTTP + TypeScript + JS natif, pas Next.js/React/Zod."
+    },
+    {
+      "requirement": 50,
+      "title": "MONOREPO",
+      "status": "LOCAL_VERIFIED",
+      "paths": "apps, packages",
+      "assessment": "Organisation web/worker/cœur, indépendante du site2 existant."
+    },
+    {
+      "requirement": 51,
+      "title": "ADMIN",
+      "status": "PARTIAL",
+      "paths": "apps/web/server.ts, apps/web/public",
+      "assessment": "Admin protégé, derniers jobs/paiements et modèles ; édition complète/catalogues/agrégats revenus manquants."
+    },
+    {
+      "requirement": 52,
+      "title": "SUIVI DU COÛT IA",
+      "status": "IMPLEMENTED_NOT_LIVE_VALIDATED",
+      "paths": "packages/core/providers.ts, supabase/migrations",
+      "assessment": "Réservation/coût estimé et coût retourné ; aucun coût API réel mesuré."
+    },
+    {
+      "requirement": 53,
+      "title": "BUDGETS INTERNES",
+      "status": "PARTIAL",
+      "paths": "packages/core/generation.ts, supabase/migrations",
+      "assessment": "Budget IA réservé et borné ; facturation complète sandbox/infra non intégrée."
+    },
+    {
+      "requirement": 54,
+      "title": "SÉCURITÉ",
+      "status": "PARTIAL",
+      "paths": "SECURITY.md, tests",
+      "assessment": "Contrôles et régressions locales ; audit externe, RLS réelle et red team manquants."
+    },
+    {
+      "requirement": 55,
+      "title": "NE JAMAIS EXÉCUTER DU CODE TIERS SUR LE HOST",
+      "status": "IMPLEMENTED_NOT_LIVE_VALIDATED",
+      "paths": "packages/core/sandbox.ts",
+      "assessment": "Pas de fallback d’exécution générée sur serveur web ; Docker non testé."
+    },
+    {
+      "requirement": 56,
+      "title": "DOWNLOAD PACKAGE PROVENANCE",
+      "status": "LOCAL_VERIFIED",
+      "paths": "packages/core/packaging.ts",
+      "assessment": "Checksums réels vérifiés ; provenance source distingue commit de branche et version package."
+    },
+    {
+      "requirement": 57,
+      "title": "SBOM",
+      "status": "NOT_IMPLEMENTED",
+      "paths": "IMPLEMENTATION_REPORT.md",
+      "assessment": "Aucun SBOM produit ; aucune simulation de CycloneDX."
+    },
+    {
+      "requirement": 58,
+      "title": "OBSERVABILITY",
+      "status": "PARTIAL",
+      "paths": "apps/web/server.ts, packages/core/generation.ts",
+      "assessment": "Logs structurés/événements/coûts ; pas d’intégration Sentry/OpenTelemetry complète."
+    },
+    {
+      "requirement": 59,
+      "title": "FAILURES",
+      "status": "PARTIAL",
+      "paths": "apps/web/public, packages/core/generation.ts",
+      "assessment": "Échecs explicites ; catalogue complet de récupération opérationnelle à finaliser."
+    },
+    {
+      "requirement": 60,
+      "title": "CRÉDIT EN CAS D’ÉCHEC PLATEFORME",
+      "status": "IMPLEMENTED_NOT_LIVE_VALIDATED",
+      "paths": "supabase/migrations",
+      "assessment": "Crédit réservé/réessai sans deuxième paiement ; scénario réel d’échec puis reprise non exécuté."
+    },
+    {
+      "requirement": 61,
+      "title": "STRIPE WEBHOOKS",
+      "status": "PARTIAL",
+      "paths": "packages/core/payments.ts",
+      "assessment": "Signature et déduplication écrites ; commandes échouées/expirées journalisées sans réconciliation automatique complète."
+    },
+    {
+      "requirement": 62,
+      "title": "STRIPE TAX",
+      "status": "NOT_IMPLEMENTED",
+      "paths": "DEPLOYMENT.md",
+      "assessment": "TVA/Stripe Tax à configurer et intégrer avant commercialisation ; aucune logique fiscale improvisée."
+    },
+    {
+      "requirement": 63,
+      "title": "PAGES LÉGALES",
+      "status": "PARTIAL",
+      "paths": "apps/web/public/legal.html",
+      "assessment": "Page explicitement provisoire, pas de CGV/politique de remboursement juridiquement validées."
+    },
+    {
+      "requirement": 64,
+      "title": "FUTURE AGENT STORE",
+      "status": "PARTIAL",
+      "paths": "apps/web/server.ts",
+      "assessment": "Store désactivé ; modèle marketplace public/listed non implémenté."
+    },
+    {
+      "requirement": 65,
+      "title": "TESTS",
+      "status": "PARTIAL",
+      "paths": "tests, scripts",
+      "assessment": "104 tests locaux ; intégrations réelles, génération sandbox et E2E commercial absents."
+    },
+    {
+      "requirement": 66,
+      "title": "TESTS STRIPE",
+      "status": "PARTIAL",
+      "paths": "tests/core.test.ts, provider-contracts.test.ts",
+      "assessment": "Signatures/contrats testés localement ; vraie suite Stripe test complète non exécutée."
+    },
+    {
+      "requirement": 67,
+      "title": "TESTS AI",
+      "status": "LOCAL_VERIFIED",
+      "paths": "tests/provider-contracts.test.ts, scripts/live-check.ts",
+      "assessment": "FakeProvider seulement dans les tests ; opt-in réel désactivé par défaut."
+    },
+    {
+      "requirement": 68,
+      "title": "EVAL DU QUESTION ENGINE",
+      "status": "PARTIAL",
+      "paths": "tests/core.test.ts",
+      "assessment": "Six scénarios de cadrage de base ; pas d’évaluation extensive/calibrée de qualité d’interview IA."
+    },
+    {
+      "requirement": 69,
+      "title": "SELF-AUDIT",
+      "status": "EXECUTED_WITH_BLOCKERS",
+      "paths": "reports/axdia",
+      "assessment": "Vrais auto-audits : RECURSIVE BLOCKED et BR360 FAIL, sans conversion en PASS."
+    },
+    {
+      "requirement": 70,
+      "title": "RELEASE GATES",
+      "status": "EXECUTED_WITH_BLOCKERS",
+      "paths": "reports/RELEASE_GATES.json",
+      "assessment": "Gates renseignés selon preuves ; ouverture commerciale BLOCKED."
+    },
+    {
+      "requirement": 71,
+      "title": "DÉPLOIEMENT",
+      "status": "PARTIAL",
+      "paths": "DEPLOYMENT.md, apps/web/server.ts",
+      "assessment": "Procédure et probes présents ; déploiement réel et tests de restauration absents."
+    },
+    {
+      "requirement": 72,
+      "title": "RAILWAY",
+      "status": "PARTIAL",
+      "paths": "Dockerfile, railway.json, DEPLOYMENT.md",
+      "assessment": "Dockerfile non construit ici ; railway.json legacy, configuration Railway moderne non déployée."
+    },
+    {
+      "requirement": 73,
+      "title": "README",
+      "status": "LOCAL_VERIFIED",
+      "paths": "README.md",
+      "assessment": "Commandes locales vérifiées, procédure connectée distincte et non vérifiée en réel."
+    },
+    {
+      "requirement": 74,
+      "title": "IMPLEMENTATION SEQUENCE",
+      "status": "PARTIAL",
+      "paths": "IMPLEMENTATION_REPORT.md",
+      "assessment": "Audit, recherche, code et tests exécutés ; phases connectées restantes clairement listées."
+    },
+    {
+      "requirement": 75,
+      "title": "AUDIT AVANT MODIFICATION",
+      "status": "LOCAL_VERIFIED",
+      "paths": "docs/audit",
+      "assessment": "Sources inspectées avant création ; site2 absent, pas écrasé ni modifié."
+    },
+    {
+      "requirement": 76,
+      "title": "AUCUNE FAUSSE IMPLÉMENTATION",
+      "status": "LOCAL_VERIFIED",
+      "paths": "tests, reports, packages/core/states.ts",
+      "assessment": "Atelier local marqué, mocks isolés, contrôles manquants jamais transformés en succès."
+    },
+    {
+      "requirement": 77,
+      "title": "DEFINITION OF DONE",
+      "status": "NOT_COMPLETED",
+      "paths": "IMPLEMENTATION_REPORT.md",
+      "assessment": "La Definition of Done commerciale de 25 étapes n’a pas été satisfaite."
+    },
+    {
+      "requirement": 78,
+      "title": "LIVRABLES OBLIGATOIRES",
+      "status": "PARTIAL",
+      "paths": "README.md, IMPLEMENTATION_REPORT.md",
+      "assessment": "Source et documents livrés ; composants externes, SBOM et validations manquantes identifiés."
+    },
+    {
+      "requirement": 79,
+      "title": "RAPPORT FINAL",
+      "status": "LOCAL_VERIFIED",
+      "paths": "IMPLEMENTATION_REPORT.md",
+      "assessment": "Rapport de livraison créé, résultats bruts et écarts conservés."
+    },
+    {
+      "requirement": 80,
+      "title": "RÈGLE DE TRAVAIL FINALE",
+      "status": "PARTIAL",
+      "paths": "README.md, reports",
+      "assessment": "Code réellement exécutable et testé localement ; produit commercial complet non certifié."
+    }
+  ]
+}

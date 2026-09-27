@@ -1,0 +1,874 @@
+{
+  "root": "/mnt/data/agentforge-selfaudit-final",
+  "materialization": {
+    "materialized": false,
+    "source": "/mnt/data/agentforge-selfaudit-final",
+    "kind": "directory"
+  },
+  "verification_id": "7d458fc2601746519f3786e1fd866e90",
+  "verified_at": "2026-09-27T18:32:23.163662+00:00",
+  "status": "BLOCKED",
+  "duration_seconds": 0.254,
+  "environment": {
+    "status": "COMPLETE_WITH_WARNINGS",
+    "tools": {
+      "git": {
+        "status": "PASS",
+        "path": "/usr/bin/git",
+        "version": "UNTESTED"
+      },
+      "node": {
+        "status": "NOT_AVAILABLE",
+        "path": null,
+        "version": null
+      },
+      "npm": {
+        "status": "NOT_AVAILABLE",
+        "path": null,
+        "version": null
+      },
+      "python3": {
+        "status": "PASS",
+        "path": "/usr/bin/python3",
+        "version": "UNTESTED"
+      }
+    },
+    "declared_env_keys": {
+      "ADMIN_USER_IDS": "BLOCKED",
+      "AI_ARCHITECT_MODEL": "BLOCKED",
+      "AI_ARCHITECT_PROVIDER": "BLOCKED",
+      "AI_CODE_MODEL": "BLOCKED",
+      "AI_CODE_PROVIDER": "BLOCKED",
+      "AI_DEFAULT_MODEL": "BLOCKED",
+      "AI_DEFAULT_PROVIDER": "BLOCKED",
+      "AI_INTERVIEW_MODEL": "BLOCKED",
+      "AI_INTERVIEW_PROVIDER": "BLOCKED",
+      "AI_PROVIDER_DEFAULT_MODELS_JSON": "BLOCKED",
+      "AI_REVIEW_MODEL": "BLOCKED",
+      "AI_REVIEW_PROVIDER": "BLOCKED",
+      "ALLOW_LIVE_PAYMENTS": "BLOCKED",
+      "ALLOW_LOCAL_SUPABASE": "BLOCKED",
+      "ANTHROPIC_API_KEY": "BLOCKED",
+      "APP_NAME": "BLOCKED",
+      "APP_URL": "BLOCKED",
+      "ARTIFACT_BUCKET": "BLOCKED",
+      "AXDIA_INTERNAL_USE_ACK": "BLOCKED",
+      "BR360_ROOT": "BLOCKED",
+      "BUDGET_ADVANCED_USD": "BLOCKED",
+      "BUDGET_PRODUCTION_USD": "BLOCKED",
+      "BUDGET_STARTER_USD": "BLOCKED",
+      "CODE_MAX_OUTPUT_TOKENS": "BLOCKED",
+      "ENABLE_LOCAL_WORKSHOP": "BLOCKED",
+      "GITHUB_TOKEN": "BLOCKED",
+      "GOOGLE_GENERATIVE_AI_API_KEY": "BLOCKED",
+      "HOST": "BLOCKED",
+      "ISOLATED_WORKER_ACK": "BLOCKED",
+      "LOG_REQUESTS": "BLOCKED",
+      "MISTRAL_API_KEY": "BLOCKED",
+      "MODEL_CATALOG_OVERRIDES_JSON": "BLOCKED",
+      "NODE_ENV": "BLOCKED",
+      "OPENAI_API_KEY": "BLOCKED",
+      "OPENROUTER_API_KEY": "BLOCKED",
+      "PORT": "BLOCKED",
+      "RECURSIVE_ROOT": "BLOCKED",
+      "RELEASE_APPROVED": "BLOCKED",
+      "RUN_LIVE_CHECKS": "BLOCKED",
+      "SANDBOX_IMAGE": "BLOCKED",
+      "SANDBOX_PROVIDER": "BLOCKED",
+      "STRIPE_PRICE_ADVANCED": "BLOCKED",
+      "STRIPE_PRICE_PRODUCTION": "BLOCKED",
+      "STRIPE_PRICE_STARTER": "BLOCKED",
+      "STRIPE_SECRET_KEY": "BLOCKED",
+      "STRIPE_WEBHOOK_SECRET": "BLOCKED",
+      "SUPABASE_ANON_KEY": "BLOCKED",
+      "SUPABASE_SERVICE_ROLE_KEY": "<REDACTED>",
+      "SUPABASE_URL": "BLOCKED",
+      "WORKER_HOST": "BLOCKED",
+      "WORKER_PORT": "BLOCKED"
+    },
+    "missing_tools": [
+      "node",
+      "npm"
+    ],
+    "disk": {
+      "free_bytes": 31648395264,
+      "status": "PASS"
+    },
+    "note": "Environment variable names may be reported; secret values are never emitted."
+  },
+  "commands": [
+    {
+      "command": [
+        "<internal-python-syntax-check>"
+      ],
+      "purpose": "syntax",
+      "source": "runtime verifier",
+      "confidence": "HIGH",
+      "safe_to_run": true,
+      "requires_network": false,
+      "requires_credentials": false,
+      "expected_outputs": [],
+      "timeout": 0,
+      "fallback": null,
+      "status": "PASS",
+      "returncode": 0,
+      "evidence_id": "ev-d11d3c247afb479e",
+      "errors": []
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "dev"
+      ],
+      "purpose": "runtime",
+      "source": "package.json:scripts",
+      "confidence": "HIGH",
+      "safe_to_run": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "expected_outputs": [],
+      "timeout": 240,
+      "fallback": null,
+      "criticality": "affected",
+      "status": "BLOCKED",
+      "returncode": null,
+      "evidence_id": "ev-938a5f29b51e42c9",
+      "log": ".recursive/runs/run-20260927T183221Z-39bded21/verification/7d458fc2601746519f3786e1fd866e90/cmd-02.json",
+      "log_sha256": "8019de467510fb5f438dd8801a9c74b761c4c1de7eafc424064f2379cc609e35",
+      "duration_seconds": null,
+      "policy": {
+        "intent": {
+          "purpose": "runtime",
+          "origin": "target",
+          "argv": [
+            "npm",
+            "run",
+            "dev"
+          ],
+          "cwd": "/mnt/data/agentforge-selfaudit-final",
+          "executes_target_code": true,
+          "may_write": true,
+          "network_requirement": "DENY",
+          "credential_requirement": "DENY",
+          "device_requirement": "DENY",
+          "sandbox_requirement": "REQUIRED",
+          "approval_requirement": "REQUIRED",
+          "expected_outputs": []
+        },
+        "policy_decision": "ASK",
+        "execution_backend": "none",
+        "network_policy": "DENY",
+        "allowed_hosts": [],
+        "environment_policy": "DEFAULT_DENY_ALLOWLIST",
+        "credentials_exposed": false,
+        "credentials": [],
+        "credential_values_logged": false,
+        "device_policy": "DENY",
+        "device_granted": false,
+        "device_type": null,
+        "workspace_mode": "NONE",
+        "resource_limits": {},
+        "reason": "unsafe_command_requires_explicit_authorization"
+      },
+      "reason": "unsafe_command_requires_explicit_authorization"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "worker"
+      ],
+      "purpose": "custom",
+      "source": "package.json:scripts",
+      "confidence": "HIGH",
+      "safe_to_run": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "expected_outputs": [],
+      "timeout": 240,
+      "fallback": null,
+      "criticality": "affected",
+      "status": "BLOCKED",
+      "returncode": null,
+      "evidence_id": "ev-b1c60c76ab7747e2",
+      "log": ".recursive/runs/run-20260927T183221Z-39bded21/verification/7d458fc2601746519f3786e1fd866e90/cmd-03.json",
+      "log_sha256": "a8ec8421dba9d09f4f196b174dd07405fa70c7a1c28be1ecc5a906c543b1e0bf",
+      "duration_seconds": null,
+      "policy": {
+        "intent": {
+          "purpose": "custom",
+          "origin": "target",
+          "argv": [
+            "npm",
+            "run",
+            "worker"
+          ],
+          "cwd": "/mnt/data/agentforge-selfaudit-final",
+          "executes_target_code": true,
+          "may_write": true,
+          "network_requirement": "DENY",
+          "credential_requirement": "DENY",
+          "device_requirement": "DENY",
+          "sandbox_requirement": "REQUIRED",
+          "approval_requirement": "REQUIRED",
+          "expected_outputs": []
+        },
+        "policy_decision": "ASK",
+        "execution_backend": "none",
+        "network_policy": "DENY",
+        "allowed_hosts": [],
+        "environment_policy": "DEFAULT_DENY_ALLOWLIST",
+        "credentials_exposed": false,
+        "credentials": [],
+        "credential_values_logged": false,
+        "device_policy": "DENY",
+        "device_granted": false,
+        "device_type": null,
+        "workspace_mode": "NONE",
+        "resource_limits": {},
+        "reason": "unsafe_command_requires_explicit_authorization"
+      },
+      "reason": "unsafe_command_requires_explicit_authorization"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "test"
+      ],
+      "purpose": "custom",
+      "source": "package.json:scripts",
+      "confidence": "HIGH",
+      "safe_to_run": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "expected_outputs": [],
+      "timeout": 240,
+      "fallback": null,
+      "criticality": "affected",
+      "status": "BLOCKED",
+      "returncode": null,
+      "evidence_id": "ev-f9a438de5c00484e",
+      "log": ".recursive/runs/run-20260927T183221Z-39bded21/verification/7d458fc2601746519f3786e1fd866e90/cmd-04.json",
+      "log_sha256": "e03c80fd1029530d92861ed3d20436ec8afc934ed3b5c4ed5e1faa2c0da170fb",
+      "duration_seconds": null,
+      "policy": {
+        "intent": {
+          "purpose": "custom",
+          "origin": "target",
+          "argv": [
+            "npm",
+            "run",
+            "test"
+          ],
+          "cwd": "/mnt/data/agentforge-selfaudit-final",
+          "executes_target_code": true,
+          "may_write": true,
+          "network_requirement": "DENY",
+          "credential_requirement": "DENY",
+          "device_requirement": "DENY",
+          "sandbox_requirement": "REQUIRED",
+          "approval_requirement": "REQUIRED",
+          "expected_outputs": []
+        },
+        "policy_decision": "ASK",
+        "execution_backend": "none",
+        "network_policy": "DENY",
+        "allowed_hosts": [],
+        "environment_policy": "DEFAULT_DENY_ALLOWLIST",
+        "credentials_exposed": false,
+        "credentials": [],
+        "credential_values_logged": false,
+        "device_policy": "DENY",
+        "device_granted": false,
+        "device_type": null,
+        "workspace_mode": "NONE",
+        "resource_limits": {},
+        "reason": "unsafe_command_requires_explicit_authorization"
+      },
+      "reason": "unsafe_command_requires_explicit_authorization"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "test:live"
+      ],
+      "purpose": "unit_test",
+      "source": "package.json:scripts",
+      "confidence": "HIGH",
+      "safe_to_run": true,
+      "requires_network": false,
+      "requires_credentials": false,
+      "expected_outputs": [],
+      "timeout": 240,
+      "fallback": null,
+      "criticality": "affected",
+      "status": "BLOCKED",
+      "returncode": null,
+      "evidence_id": "ev-e32e8fbc0deb40f8",
+      "log": ".recursive/runs/run-20260927T183221Z-39bded21/verification/7d458fc2601746519f3786e1fd866e90/cmd-05.json",
+      "log_sha256": "eeb6053e2f3435fd96147348b3f51342dfdd9fbcec356d1c34c5f7dc3bf20a7f",
+      "duration_seconds": null,
+      "policy": {
+        "intent": {
+          "purpose": "unit_test",
+          "origin": "target",
+          "argv": [
+            "npm",
+            "run",
+            "test:live"
+          ],
+          "cwd": "/mnt/data/agentforge-selfaudit-final",
+          "executes_target_code": true,
+          "may_write": true,
+          "network_requirement": "DENY",
+          "credential_requirement": "DENY",
+          "device_requirement": "DENY",
+          "sandbox_requirement": "REQUIRED",
+          "approval_requirement": "AUTO_IN_SANDBOX",
+          "expected_outputs": []
+        },
+        "policy_decision": "BLOCK",
+        "execution_backend": "none",
+        "network_policy": "DENY",
+        "allowed_hosts": [],
+        "environment_policy": "DEFAULT_DENY_ALLOWLIST",
+        "credentials_exposed": false,
+        "credentials": [],
+        "credential_values_logged": false,
+        "device_policy": "DENY",
+        "device_granted": false,
+        "device_type": null,
+        "workspace_mode": "NONE",
+        "resource_limits": {},
+        "reason": "sandbox_unavailable"
+      },
+      "reason": "sandbox_unavailable"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "start"
+      ],
+      "purpose": "package",
+      "source": "package.json:scripts",
+      "confidence": "HIGH",
+      "safe_to_run": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "expected_outputs": [],
+      "timeout": 240,
+      "fallback": null,
+      "criticality": "affected",
+      "status": "BLOCKED",
+      "returncode": null,
+      "evidence_id": "ev-dcb8a8ac74964f93",
+      "log": ".recursive/runs/run-20260927T183221Z-39bded21/verification/7d458fc2601746519f3786e1fd866e90/cmd-06.json",
+      "log_sha256": "57bb1e17d844e7794d3e394213116e3fc6fad68fe3b33ac13ea293d9ccc509b8",
+      "duration_seconds": null,
+      "policy": {
+        "intent": {
+          "purpose": "package",
+          "origin": "target",
+          "argv": [
+            "npm",
+            "run",
+            "start"
+          ],
+          "cwd": "/mnt/data/agentforge-selfaudit-final",
+          "executes_target_code": true,
+          "may_write": true,
+          "network_requirement": "DENY",
+          "credential_requirement": "DENY",
+          "device_requirement": "DENY",
+          "sandbox_requirement": "REQUIRED",
+          "approval_requirement": "REQUIRED",
+          "expected_outputs": []
+        },
+        "policy_decision": "ASK",
+        "execution_backend": "none",
+        "network_policy": "DENY",
+        "allowed_hosts": [],
+        "environment_policy": "DEFAULT_DENY_ALLOWLIST",
+        "credentials_exposed": false,
+        "credentials": [],
+        "credential_values_logged": false,
+        "device_policy": "DENY",
+        "device_granted": false,
+        "device_type": null,
+        "workspace_mode": "NONE",
+        "resource_limits": {},
+        "reason": "unsafe_command_requires_explicit_authorization"
+      },
+      "reason": "unsafe_command_requires_explicit_authorization"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "start:worker"
+      ],
+      "purpose": "package",
+      "source": "package.json:scripts",
+      "confidence": "HIGH",
+      "safe_to_run": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "expected_outputs": [],
+      "timeout": 240,
+      "fallback": null,
+      "criticality": "affected",
+      "status": "BLOCKED",
+      "returncode": null,
+      "evidence_id": "ev-e00a6f15599a49db",
+      "log": ".recursive/runs/run-20260927T183221Z-39bded21/verification/7d458fc2601746519f3786e1fd866e90/cmd-07.json",
+      "log_sha256": "0001fa5b1731c8e9b94471e0ea10592cac639ffd3a64b4b615ba55d8e21213ee",
+      "duration_seconds": null,
+      "policy": {
+        "intent": {
+          "purpose": "package",
+          "origin": "target",
+          "argv": [
+            "npm",
+            "run",
+            "start:worker"
+          ],
+          "cwd": "/mnt/data/agentforge-selfaudit-final",
+          "executes_target_code": true,
+          "may_write": true,
+          "network_requirement": "DENY",
+          "credential_requirement": "DENY",
+          "device_requirement": "DENY",
+          "sandbox_requirement": "REQUIRED",
+          "approval_requirement": "REQUIRED",
+          "expected_outputs": []
+        },
+        "policy_decision": "ASK",
+        "execution_backend": "none",
+        "network_policy": "DENY",
+        "allowed_hosts": [],
+        "environment_policy": "DEFAULT_DENY_ALLOWLIST",
+        "credentials_exposed": false,
+        "credentials": [],
+        "credential_values_logged": false,
+        "device_policy": "DENY",
+        "device_granted": false,
+        "device_type": null,
+        "workspace_mode": "NONE",
+        "resource_limits": {},
+        "reason": "unsafe_command_requires_explicit_authorization"
+      },
+      "reason": "unsafe_command_requires_explicit_authorization"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "doctor"
+      ],
+      "purpose": "custom",
+      "source": "package.json:scripts",
+      "confidence": "HIGH",
+      "safe_to_run": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "expected_outputs": [],
+      "timeout": 240,
+      "fallback": null,
+      "criticality": "affected",
+      "status": "BLOCKED",
+      "returncode": null,
+      "evidence_id": "ev-a4b29aaa99f74c21",
+      "log": ".recursive/runs/run-20260927T183221Z-39bded21/verification/7d458fc2601746519f3786e1fd866e90/cmd-08.json",
+      "log_sha256": "0fc6f1c5a2e6c927d6450a9f3cca19710ecbb13f1423b55a5eb0ac231e211711",
+      "duration_seconds": null,
+      "policy": {
+        "intent": {
+          "purpose": "custom",
+          "origin": "target",
+          "argv": [
+            "npm",
+            "run",
+            "doctor"
+          ],
+          "cwd": "/mnt/data/agentforge-selfaudit-final",
+          "executes_target_code": true,
+          "may_write": true,
+          "network_requirement": "DENY",
+          "credential_requirement": "DENY",
+          "device_requirement": "DENY",
+          "sandbox_requirement": "REQUIRED",
+          "approval_requirement": "REQUIRED",
+          "expected_outputs": []
+        },
+        "policy_decision": "ASK",
+        "execution_backend": "none",
+        "network_policy": "DENY",
+        "allowed_hosts": [],
+        "environment_policy": "DEFAULT_DENY_ALLOWLIST",
+        "credentials_exposed": false,
+        "credentials": [],
+        "credential_values_logged": false,
+        "device_policy": "DENY",
+        "device_granted": false,
+        "device_type": null,
+        "workspace_mode": "NONE",
+        "resource_limits": {},
+        "reason": "unsafe_command_requires_explicit_authorization"
+      },
+      "reason": "unsafe_command_requires_explicit_authorization"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "fixture"
+      ],
+      "purpose": "custom",
+      "source": "package.json:scripts",
+      "confidence": "HIGH",
+      "safe_to_run": false,
+      "requires_network": false,
+      "requires_credentials": false,
+      "expected_outputs": [],
+      "timeout": 240,
+      "fallback": null,
+      "criticality": "affected",
+      "status": "BLOCKED",
+      "returncode": null,
+      "evidence_id": "ev-e610e93d9faa4229",
+      "log": ".recursive/runs/run-20260927T183221Z-39bded21/verification/7d458fc2601746519f3786e1fd866e90/cmd-09.json",
+      "log_sha256": "dafed991b119ad3a793b8439fd4868e2048f5c3808c341c5305ceed792fc19f8",
+      "duration_seconds": null,
+      "policy": {
+        "intent": {
+          "purpose": "custom",
+          "origin": "target",
+          "argv": [
+            "npm",
+            "run",
+            "fixture"
+          ],
+          "cwd": "/mnt/data/agentforge-selfaudit-final",
+          "executes_target_code": true,
+          "may_write": true,
+          "network_requirement": "DENY",
+          "credential_requirement": "DENY",
+          "device_requirement": "DENY",
+          "sandbox_requirement": "REQUIRED",
+          "approval_requirement": "REQUIRED",
+          "expected_outputs": []
+        },
+        "policy_decision": "ASK",
+        "execution_backend": "none",
+        "network_policy": "DENY",
+        "allowed_hosts": [],
+        "environment_policy": "DEFAULT_DENY_ALLOWLIST",
+        "credentials_exposed": false,
+        "credentials": [],
+        "credential_values_logged": false,
+        "device_policy": "DENY",
+        "device_granted": false,
+        "device_type": null,
+        "workspace_mode": "NONE",
+        "resource_limits": {},
+        "reason": "unsafe_command_requires_explicit_authorization"
+      },
+      "reason": "unsafe_command_requires_explicit_authorization"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "purpose": "typecheck",
+      "source": "package.json:scripts",
+      "confidence": "HIGH",
+      "safe_to_run": true,
+      "requires_network": false,
+      "requires_credentials": false,
+      "expected_outputs": [],
+      "timeout": 240,
+      "fallback": null,
+      "criticality": "affected",
+      "status": "BLOCKED",
+      "returncode": null,
+      "evidence_id": "ev-dd0c86abc83f4b61",
+      "log": ".recursive/runs/run-20260927T183221Z-39bded21/verification/7d458fc2601746519f3786e1fd866e90/cmd-10.json",
+      "log_sha256": "6d55106cd1769a369f366037c14243b8609abdf04f8aa2b12d089064259d9bd8",
+      "duration_seconds": null,
+      "policy": {
+        "intent": {
+          "purpose": "typecheck",
+          "origin": "target",
+          "argv": [
+            "npm",
+            "run",
+            "typecheck"
+          ],
+          "cwd": "/mnt/data/agentforge-selfaudit-final",
+          "executes_target_code": true,
+          "may_write": true,
+          "network_requirement": "DENY",
+          "credential_requirement": "DENY",
+          "device_requirement": "DENY",
+          "sandbox_requirement": "REQUIRED",
+          "approval_requirement": "AUTO_IN_SANDBOX",
+          "expected_outputs": []
+        },
+        "policy_decision": "BLOCK",
+        "execution_backend": "none",
+        "network_policy": "DENY",
+        "allowed_hosts": [],
+        "environment_policy": "DEFAULT_DENY_ALLOWLIST",
+        "credentials_exposed": false,
+        "credentials": [],
+        "credential_values_logged": false,
+        "device_policy": "DENY",
+        "device_granted": false,
+        "device_type": null,
+        "workspace_mode": "NONE",
+        "resource_limits": {},
+        "reason": "sandbox_unavailable"
+      },
+      "reason": "sandbox_unavailable"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "purpose": "build",
+      "source": "package.json:scripts",
+      "confidence": "HIGH",
+      "safe_to_run": true,
+      "requires_network": false,
+      "requires_credentials": false,
+      "expected_outputs": [],
+      "timeout": 600,
+      "fallback": null,
+      "criticality": "affected",
+      "status": "BLOCKED",
+      "returncode": null,
+      "evidence_id": "ev-270d71ce94da4767",
+      "log": ".recursive/runs/run-20260927T183221Z-39bded21/verification/7d458fc2601746519f3786e1fd866e90/cmd-11.json",
+      "log_sha256": "bda7f393abe70922eda11a7f82d8e9d6ef92b08b77a74f8f3eddef81d8398a22",
+      "duration_seconds": null,
+      "policy": {
+        "intent": {
+          "purpose": "build",
+          "origin": "target",
+          "argv": [
+            "npm",
+            "run",
+            "build"
+          ],
+          "cwd": "/mnt/data/agentforge-selfaudit-final",
+          "executes_target_code": true,
+          "may_write": true,
+          "network_requirement": "DENY",
+          "credential_requirement": "DENY",
+          "device_requirement": "DENY",
+          "sandbox_requirement": "REQUIRED",
+          "approval_requirement": "AUTO_IN_SANDBOX",
+          "expected_outputs": []
+        },
+        "policy_decision": "BLOCK",
+        "execution_backend": "none",
+        "network_policy": "DENY",
+        "allowed_hosts": [],
+        "environment_policy": "DEFAULT_DENY_ALLOWLIST",
+        "credentials_exposed": false,
+        "credentials": [],
+        "credential_values_logged": false,
+        "device_policy": "DENY",
+        "device_granted": false,
+        "device_type": null,
+        "workspace_mode": "NONE",
+        "resource_limits": {},
+        "reason": "sandbox_unavailable"
+      },
+      "reason": "sandbox_unavailable"
+    }
+  ],
+  "test_selection": {
+    "impact": null,
+    "full_suite": true,
+    "selected_tests": [],
+    "budget_seconds": null,
+    "budget_enforced": false,
+    "reason": "full suite: release, critical, no changes or uncertain graph"
+  },
+  "boundary": {
+    "status": "PASS",
+    "regular_files": 61,
+    "blocked_entries": [],
+    "hardlink_warnings": [],
+    "proof_level": "E2"
+  },
+  "security": {
+    "status": "PASS",
+    "findings": 0,
+    "ci": {
+      "status": "COMPLETE_WITH_WARNINGS",
+      "generated_at": "2026-09-27T18:32:23.122435+00:00",
+      "workflow_files": [
+        ".github/workflows/ci.yml"
+      ],
+      "findings": [
+        {
+          "severity": "MEDIUM",
+          "code": "ACTION_NOT_PINNED_SHA",
+          "path": ".github/workflows/ci.yml",
+          "uses": "actions/checkout@v4",
+          "detail": "action is not pinned to a full-length commit SHA"
+        },
+        {
+          "severity": "MEDIUM",
+          "code": "ACTION_NOT_PINNED_SHA",
+          "path": ".github/workflows/ci.yml",
+          "uses": "actions/setup-node@v4",
+          "detail": "action is not pinned to a full-length commit SHA"
+        }
+      ],
+      "note": "Static CI review only. A warning is not proof of exploitability, and no finding is not proof of safety.",
+      "references": [
+        "https://docs.github.com/en/actions/reference/security/secure-use"
+      ]
+    },
+    "supply_chain": {
+      "dependency_trust": {
+        "status": "UNTESTED",
+        "signals": {
+          "security_policy": {
+            "status": "OBSERVED",
+            "artifacts": [
+              {
+                "path": "SECURITY.md",
+                "sha256": "8f5089e9e3fd05fc1a6ff84a732fc0cf3c91d53e747f38ca57d7a11af38f16e2"
+              }
+            ],
+            "proof_level": "E1",
+            "authenticity": "UNVERIFIED"
+          },
+          "sbom": {
+            "status": "UNKNOWN",
+            "artifacts": [],
+            "proof_level": "E1",
+            "authenticity": "UNVERIFIED"
+          },
+          "signatures": {
+            "status": "UNKNOWN",
+            "artifacts": [],
+            "proof_level": "E1",
+            "authenticity": "UNVERIFIED"
+          },
+          "vulnerability_report": {
+            "status": "UNKNOWN",
+            "artifacts": [],
+            "proof_level": "E1",
+            "authenticity": "UNVERIFIED"
+          },
+          "maintenance": {
+            "status": "UNKNOWN",
+            "reason": "No authoritative maintenance observation"
+          },
+          "known_vulnerabilities": {
+            "status": "UNKNOWN",
+            "reason": "No fresh independent vulnerability scan"
+          },
+          "release_integrity": {
+            "status": "UNKNOWN",
+            "dependencies": [],
+            "proof_level": "E1"
+          }
+        },
+        "materials": [
+          {
+            "path": "SECURITY.md",
+            "sha256": "8f5089e9e3fd05fc1a6ff84a732fc0cf3c91d53e747f38ca57d7a11af38f16e2"
+          }
+        ],
+        "dependencies": [],
+        "vulnerability_check": {
+          "status": "NOT_AVAILABLE",
+          "provider": "OSV",
+          "tool_available": false,
+          "checked_at": null
+        },
+        "signature_check": {
+          "status": "NOT_AVAILABLE",
+          "provider": "cosign",
+          "tool_available": false,
+          "checked_at": null
+        },
+        "limitation": "Local files are inventory signals. No automatic online lookup, signature verification or absence-of-vulnerabilities claim."
+      },
+      "status": "COMPLETE_WITH_WARNINGS",
+      "generated_at": "2026-09-27T18:32:23.137263+00:00",
+      "observed_ecosystems": [
+        "node",
+        "docker"
+      ],
+      "findings": [
+        {
+          "severity": "MEDIUM",
+          "code": "CONTAINER_BASE_NOT_DIGEST_PINNED",
+          "path": "Dockerfile",
+          "image": "node:22-bookworm-slim",
+          "detail": "Container base image is not pinned by digest; mutable tags can reduce reproducibility/supply-chain assurance."
+        },
+        {
+          "severity": "MEDIUM",
+          "code": "CONTAINER_BASE_NOT_DIGEST_PINNED",
+          "path": "Dockerfile",
+          "image": "node:22-bookworm-slim",
+          "detail": "Container base image is not pinned by digest; mutable tags can reduce reproducibility/supply-chain assurance."
+        }
+      ],
+      "note": "Static E1 supply-chain heuristics only. Libraries may intentionally use version ranges; assess context before remediation.",
+      "references": [
+        "https://github.com/ossf/scorecard/blob/main/docs/checks.md"
+      ]
+    }
+  },
+  "cold_start": {
+    "fresh_process_commands": "UNTESTED",
+    "dependency_reinstall": "UNTESTED",
+    "rebuild": "UNTESTED",
+    "relaunch": "UNTESTED",
+    "status": "COMPLETE_WITH_WARNINGS",
+    "note": "Every verifier command runs in a fresh process. Dependency reinstall is never assumed or silently performed."
+  },
+  "verification_consistency": {
+    "start_fingerprint": "135dd5cd1dcaeb19ca2acb14fcb63fe53756a225bb9f9031cac5ba82f41ed7e9",
+    "end_fingerprint": "135dd5cd1dcaeb19ca2acb14fcb63fe53756a225bb9f9031cac5ba82f41ed7e9",
+    "target_drifted_during_verification": false
+  },
+  "evidence_ids": [
+    "ev-d11d3c247afb479e",
+    "ev-938a5f29b51e42c9",
+    "ev-b1c60c76ab7747e2",
+    "ev-f9a438de5c00484e",
+    "ev-e32e8fbc0deb40f8",
+    "ev-dcb8a8ac74964f93",
+    "ev-e00a6f15599a49db",
+    "ev-a4b29aaa99f74c21",
+    "ev-e610e93d9faa4229",
+    "ev-dd0c86abc83f4b61",
+    "ev-270d71ce94da4767",
+    "ev-4f4f85bb05404b0e",
+    "ev-d1466dd36ca14f90",
+    "ev-54c1b00170e44909"
+  ],
+  "limitations": [
+    "Real browser gate not proven; browser/UI claims remain UNTESTED unless external E5 evidence is added.",
+    "Provider-backed flows require E6 staging/provider evidence before production claims."
+  ],
+  "graph_id": "verification:992e1920802f8aa6b1357679"
+}

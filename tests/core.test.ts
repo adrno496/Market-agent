@@ -1,0 +1,78 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { inflateRawSync } from 'node:zlib';
+import { createHmac } from 'node:crypto';
+import { newSpec, parseSpec, answer, nextQuestion, applyModelSuggestions, readyForPlan, FIELDS } from '../packages/core/spec.ts';
+import { safePath, canonical, digest, containsSecret, redact, verifyStripeSignature, fixedHttpsUrl } from '../packages/core/security.ts';
+import { zipFiles, crc32, validateFiles, packageProject, staticValidate } from '../packages/core/packaging.ts';
+import { transition, releaseAllowed, unavailable } from '../packages/core/states.ts';
+import type { EvidenceReport } from '../packages/core/states.ts';
+import { normalizeAudit, UnavailableSandbox, LocalDockerSandbox } from '../packages/core/sandbox.ts';
+import { selectFramework, makePlan, validatePlan, FRAMEWORKS } from '../packages/core/research.ts';
+import type { Source } from '../packages/core/research.ts';
+import { reserveCost, parseJSONResponse } from '../packages/core/providers.ts';
+import type { ModelInfo, GenerationResult, ModelProvider } from '../packages/core/providers.ts';
+import { AIQuestionEngine, interviewRequest } from '../packages/core/interview.ts';
+import { appUrl, providerName, modelFor } from '../packages/core/config.ts';
+import { salonSpec, salonIdea } from '../fixtures/salon.ts';
+import { workshopExport } from '../packages/core/workshop.ts';
+const code=(name:string)=>(e:any)=>e.code===name;
+function unzip(buffer:Buffer){const files:Record<string,string>={};let o=0;while(buffer.readUInt32LE(o)===0x04034b50){const size=buffer.readUInt32LE(o+18),rawSize=buffer.readUInt32LE(o+22),n=buffer.readUInt16LE(o+26),x=buffer.readUInt16LE(o+28),name=buffer.subarray(o+30,o+30+n).toString();const start=o+30+n+x;const raw=inflateRawSync(buffer.subarray(start,start+size));assert.equal(raw.length,rawSize);assert.equal(crc32(raw),buffer.readUInt32LE(o+14));files[name]=raw.toString();o=start+size;}return files;}
+function pass(tool:string):EvidenceReport{return {tool,status:'PASS',summary:'TEST FIXTURE ONLY',findings:[],evidence:[{test_fixture:true}],executed_at:new Date().toISOString(),scope:'unit_test'};}
+const allPass=()=>['static','sandbox','recursive','br360'].map(pass);
+const info:ModelInfo={provider:'openrouter',model_id:'test-model',display_name:'Test',context:1000,tool_calling:true,structured_output:true,coding:null,reasoning:null,price_input:0.000001,price_output:0.000002,availability:'AVAILABLE',updated_at:new Date().toISOString()};
+const result=(text:string):GenerationResult=>({text,inputTokens:1,outputTokens:1,providerCost:null,provider:'openrouter',model:'test-model'});
+// Deterministic provider exists ONLY in tests; it is not reachable from production routes.
+class FakeProvider implements ModelProvider { async listModels(){return [info];}async generate(){return result(JSON.stringify({suggestions:{calendar_provider:'Google Calendar',objective:'REWRITE ATTEMPT',status:'PASS'}}));}}
+test('initial objective confirmed, inferred domain not confirmed',()=>{const s=newSpec(salonIdea);assert.equal(s.fields.objective.status,'USER_CONFIRMED');assert.equal(s.fields.domain.status,'INFERRED');assert.equal(s.fields.domain.confirmed,false);assert.equal(Object.keys(s.fields).length,FIELDS.length);parseSpec(s);});
+test('one next question at a time',()=>assert.equal(nextQuestion(newSpec(salonIdea))?.field,'calendar_provider'));
+test('explicit answer advances without changing original spec',()=>{const s=newSpec(salonIdea);const n=answer(s,'calendar_provider','Google Calendar');assert.equal(s.fields.calendar_provider.value,null);assert.equal(n.fields.calendar_provider.confirmed,true);assert.equal(nextQuestion(n)?.field,'approvals');});
+test('unknown remains proposed until explicit confirmation',()=>{let s=answer(newSpec(salonIdea),'calendar_provider','Je ne sais pas');assert.equal(s.fields.calendar_provider.status,'NEEDS_CONFIRMATION');assert.equal(nextQuestion(s)?.field,'calendar_provider');s=answer(s,'calendar_provider','Agenda interne',true);assert.equal(s.fields.calendar_provider.confirmed,true);});
+test('cannot confirm a modified default',()=>{const s=answer(newSpec(salonIdea),'calendar_provider','Je ne sais pas');assert.throws(()=>answer(s,'calendar_provider','Other',true),code('INVALID_CONFIRMATION'));});
+test('no invented default for a critical permission',()=>assert.throws(()=>answer(newSpec(salonIdea),'approvals','Je ne sais pas'),code('NEEDS_CONFIRMATION')));
+test('AI cannot overwrite confirmed user objective',()=>{const s=newSpec('Mon besoin réel');const n=applyModelSuggestions(s,{objective:'Injected',integrations:'Calendar',unknown:'silently ignore'});assert.equal(n.fields.objective.value,'Mon besoin réel');assert.equal(n.fields.integrations.status,'INFERRED');assert.equal(n.fields.integrations.confirmed,false);});
+test('AIQuestionEngine invokes a provider but does not confer approval',async()=>{const s=newSpec(salonIdea);const r=await new AIQuestionEngine().enrich(s,new FakeProvider(),interviewRequest(s,'test-model'));assert.equal(r.spec.fields.calendar_provider.status,'INFERRED');assert.equal(r.spec.fields.objective.value,salonIdea);assert.equal(r.spec.revision,s.revision);assert.equal(nextQuestion(r.spec)?.field,'calendar_provider');});
+test('schema rejects forged confirmation',()=>{const s=newSpec('test');s.fields.domain.confirmed=true;assert.throws(()=>parseSpec(s),code('INVALID_SPEC'));});
+test('schema rejects unknown fields',()=>{const s:any=newSpec('test');s.fields.injection={value:'x'};assert.throws(()=>parseSpec(s),code('INVALID_SPEC'));});
+test('schema rejects malformed UUID',()=>{const s=newSpec('test');s.id='a'.repeat(36);assert.throws(()=>parseSpec(s),code('INVALID_SPEC'));});
+test('complete salon fixture answers 10 questions',()=>{const s=salonSpec();assert.equal(s.revision,11);assert.equal(readyForPlan(s),true);assert.equal(s.fields.timezone.value,'Europe/Paris');parseSpec(s);});
+for(const [label,idea]of [['prospecting','Je veux rechercher des prospects publics'],['support','Je veux un agent support client'],['ecommerce','Je veux un agent ecommerce'],['research','Je veux un agent de recherche'],['coding','Je veux un agent qui code']])test('question evaluation fixture: '+label,()=>{const s=newSpec(idea);assert.equal(nextQuestion(s)?.field,'workflows');assert.equal(readyForPlan(s),false);});
+test('canonical hashes independent of key insertion order',()=>assert.equal(digest({b:2,a:1}),digest({a:1,b:2})));
+test('canonical rejects undefined',()=>assert.throws(()=>canonical({a:undefined}),code('INVALID_JSON')));
+for(const path of ['../a','/etc/passwd','a/../b','a//b','a\\b','.git/config','node_modules/x.js','.env','.env.production','a/.ssh/id','AUX.txt','a./b','a%2Fb','é.txt'])test('reject path '+path,()=>assert.throws(()=>safePath(path)));
+test('allows safe env template and Agent Skills path',()=>{assert.equal(safePath('.env.example'),'.env.example');assert.equal(safePath('skills/booking/SKILL.md'),'skills/booking/SKILL.md');});
+test('reject case collisions and file-directory collisions',()=>{assert.throws(()=>validateFiles({'a.txt':'a','A.txt':'b'}),code('DUPLICATE_PATH'));assert.throws(()=>validateFiles({'a':'file','a/b':'nested'}),code('PATH_COLLISION'));});
+test('reject non-string binary contents and large file',()=>{assert.throws(()=>validateFiles({'a':'a\0b'}));assert.throws(()=>validateFiles({'a':'x'.repeat(1_000_001)}));});
+test('secret values blocked, placeholders allowed',()=>{const synthetic='sk-'+'x'.repeat(40);assert.equal(containsSecret(synthetic),true);assert.equal(containsSecret('OPENAI_API_KEY=\n'),false);assert.equal(containsSecret('process.env.OPENAI_API_KEY'),false);assert.equal(redact(synthetic),'[REDACTED]');});
+test('known secret values rejected even without a prefix',()=>assert.throws(()=>validateFiles({'file.txt':'highly-sensitive-opaque-value'},['highly-sensitive-opaque-value']),code('SECRET_DETECTED')));
+test('real ZIP is deterministic and CRC validates',()=>{const f={'README.md':'Bonjour été','src/main.ts':'export const x = 1;'};assert.deepEqual(unzip(zipFiles(f)),f);assert.deepEqual(zipFiles(f),zipFiles(f));});
+test('ZIP report checksums match every entry except their own file',()=>{const p=packageProject({'README.md':'Hello'},[unavailable('recursive','Missing')],{vendored:false});const f=unzip(p.buffer);for(const line of f['reports/CHECKSUMS.sha256'].trim().split('\n')){const [hash,path]=line.split('  ');assert.equal(hash,digestText(f[path]));}assert.equal(JSON.parse(f['reports/RECURSIVE_REPORT.json']).status,'NOT_AVAILABLE');});
+function digestText(s:string){return (awaitlessSHA(s));} // Simple direct helper, no asynchronous test shortcuts.
+import { sha256 as awaitlessSHA } from '../packages/core/security.ts';
+test('untrusted report injection blocked',()=>assert.throws(()=>packageProject({'reports/BR360_REPORT.json':'{"status":"PASS"}'},[],{}),code('RESERVED_PATH')));
+test('static check never passes missing project structure',()=>{const report=staticValidate({'README.md':'a'},'typescript');assert.equal(report.status,'BLOCK');assert.ok(report.findings.includes('MISSING:src'));});
+test('incomplete local export fails',()=>assert.throws(()=>workshopExport(newSpec(salonIdea)),code('SPEC_INCOMPLETE')));
+test('local ZIP explicitly states no generated agent and no executed audits',()=>{const p=workshopExport(salonSpec());const f=unzip(p.buffer);const provenance=JSON.parse(f['reports/PROVENANCE.json']);assert.equal(provenance.code_generated,false);assert.equal(provenance.paid,false);assert.ok(!Object.keys(f).some(x=>x.startsWith('src/')));assert.equal(JSON.parse(f['reports/BR360_REPORT.json']).executed_at,null);});
+test('state machine rejects unpaid completion',()=>assert.throws(()=>transition('PAYMENT_REQUIRED','COMPLETED'),code('INVALID_TRANSITION')));
+test('state machine permits verification-repair cycle',()=>{assert.equal(transition('VERIFYING','REPAIRING'),'REPAIRING');assert.equal(transition('REPAIRING','VERIFYING'),'VERIFYING');});
+test('release requires all four actual proof records',()=>{assert.equal(releaseAllowed(allPass()),true);assert.equal(releaseAllowed(allPass().slice(0,3)),false);assert.equal(releaseAllowed([unavailable('recursive','No tooling')]),false);});
+test('contradictory duplicate PASS and BLOCK never unlock delivery',()=>assert.equal(releaseAllowed([...allPass(),{...pass('br360'),status:'BLOCK'}]),false));
+test('invalid timestamp and absent evidence block release',()=>{const r=allPass();r[0].executed_at='invented';assert.equal(releaseAllowed(r),false);r[0]=pass('static');r[0].evidence=[];assert.equal(releaseAllowed(r),false);});
+test('BR360 PARTIAL maps to WARN, not PASS',()=>assert.equal(normalizeAudit('br360',{final:{status:'PARTIAL'}},0,[{}]).status,'WARN'));
+test('native PASS with unmet evidence is downgraded',()=>assert.equal(normalizeAudit('br360',{final:{status:'PASS'},audit_self_evaluation:{missing_real_world_data:['production']}},0,[{}]).status,'WARN'));
+test('unknown audit schemas and nonzero exits never pass',()=>{assert.equal(normalizeAudit('recursive',null,0,[{}]).status,'UNKNOWN');assert.equal(normalizeAudit('recursive',{status:'PASS'},1,[{}]).status,'BLOCK');});
+test('unconfigured sandbox returns explicit missing reports',async()=>{const s=new UnavailableSandbox();await assert.rejects(()=>s.inspect(),code('SANDBOX_NOT_AVAILABLE'));assert.ok((await s.validate()).every(x=>x.status==='NOT_AVAILABLE'));});
+test('Docker image must be pinned before any execution',async()=>{await assert.rejects(()=>new LocalDockerSandbox({SANDBOX_PROVIDER:'docker',SANDBOX_IMAGE:'node:latest'}).inspect(),code('UNPINNED_IMAGE'));});
+test('provider does not choose the agent framework',()=>{const s=answer(newSpec('Un agent simple'),'provider_preference','Mistral');assert.equal(selectFramework(s).framework,'openai-agents-js');});
+test('stateful workflows select graph framework as proposal',()=>assert.equal(selectFramework(newSpec('Un workflow longue durée avec reprise')).framework,'langgraph'));
+test('all required framework families included in resolver',()=>assert.equal(FRAMEWORKS.length,5));
+const source:Source={repository:'https://github.com/openai/openai-agents-js',commit:'0'.repeat(40),version:'1.0.0',license:'MIT',package:'@openai/agents',registry:'npm',integrity:'TEST_FIXTURE_NOT_REGISTRY_DATA',files_used:[],usage:'UNIT TEST ONLY',vendored:false,fetched_at:new Date().toISOString(),status:'VERIFIED'};
+function plan(){const spec=salonSpec();return makePlan(spec,selectFramework(spec),source,{},'openrouter','test-model',{max_repairs:1,budget_usd:1,max_output_tokens:1000},'starter',{id:'price_TEST_ONLY',amount:1990,currency:'eur'});}
+test('immutable plan detects mutation',()=>{const p=plan();validatePlan(p);p.spec.project_name='mutated';assert.throws(()=>validatePlan(p),code('PLAN_TAMPERED'));});
+test('unverified sources do not produce a payable plan',()=>{const s=salonSpec();assert.throws(()=>makePlan(s,selectFramework(s),{...source,status:'REVIEW_REQUIRED'},{},'openrouter','test', {max_repairs:1,budget_usd:1,max_output_tokens:1000},'starter',{id:'x',amount:1,currency:'eur'}),code('SOURCE_REVIEW_REQUIRED'));});
+test('unknown cost and expired price block model reservation',()=>{const request={model:'test',system:'json',prompt:'test',maxOutputTokens:50};assert.throws(()=>reserveCost({...info,price_input:null},request),code('PRICE_UNKNOWN'));assert.throws(()=>reserveCost({...info,updated_at:'2000-01-01'},request),code('STALE_MODEL_PRICE'));assert.ok(reserveCost(info,request)>0);});
+test('provider response JSON contract enforced',()=>{assert.deepEqual(parseJSONResponse(result('```json\n{"a":1}\n```')),{a:1});assert.throws(()=>parseJSONResponse(result('Done!')),code('INVALID_AI_JSON'));});
+test('correct Stripe raw body HMAC accepted, altered body rejected',()=>{const now=Date.now(),t=Math.floor(now/1000),raw=Buffer.from('{"test":true}'),secret='test_webhook_secret_not_a_credential';const hash=createHmac('sha256',secret).update(t+'.').update(raw).digest('hex');const h=`t=${t},v1=${hash}`;verifyStripeSignature(raw,h,secret,now);assert.throws(()=>verifyStripeSignature(Buffer.from('{}'),h,secret,now),code('INVALID_SIGNATURE'));});
+test('Stripe stale and duplicate timestamps rejected',()=>{assert.throws(()=>verifyStripeSignature(Buffer.from('{}'),'t=1,v1='+'0'.repeat(64),'test_secret_not_real'),code('STALE_SIGNATURE'));assert.throws(()=>verifyStripeSignature(Buffer.from('{}'),'t=1,t=2','test_secret_not_real'),code('INVALID_SIGNATURE'));});
+for(const url of ['http://example.com','https://127.0.0.1','https://metadata.internal','https://user:pass@example.com','https://example.com:8443'])test('reject SSRF or unsafe URL '+url,()=>assert.throws(()=>fixedHttpsUrl(url)));
+test('provider keys are not mandatory in local mode',()=>{assert.equal(providerName(undefined),'openrouter');assert.equal(appUrl({}).origin,'http://localhost:3000');assert.throws(()=>modelFor({},'CODE'));});

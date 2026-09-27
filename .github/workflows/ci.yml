@@ -1,0 +1,19 @@
+name: Candidate verification
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  local-core:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm test
+      - run: npm run build
+      - run: npm install --no-save --ignore-scripts typescript @types/node
+      - run: npm run typecheck
+      # These are local gates only. Do NOT rename this job "production ready".
+      # Pin reviewed action commits and verified development tool versions before release.

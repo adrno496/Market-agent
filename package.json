@@ -1,0 +1,22 @@
+{
+  "name": "agentforge",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "AXDIA Agent Framework Factory \u2014 verifiable implementation candidate",
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "scripts": {
+    "dev": "node --experimental-strip-types --env-file-if-exists=.env apps/web/server.ts",
+    "worker": "node --experimental-strip-types --env-file-if-exists=.env apps/worker/main.ts",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "test:live": "node --experimental-strip-types --env-file-if-exists=.env scripts/live-check.ts",
+    "build": "node --experimental-strip-types scripts/build.ts",
+    "start": "node --env-file-if-exists=.env dist/apps/web/server.js",
+    "start:worker": "node --env-file-if-exists=.env dist/apps/worker/main.js",
+    "doctor": "node --experimental-strip-types --env-file-if-exists=.env scripts/doctor.ts",
+    "fixture": "node --experimental-strip-types scripts/fixture.ts",
+    "typecheck": "node --experimental-strip-types scripts/typecheck.ts"
+  }
+}

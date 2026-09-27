@@ -1,0 +1,4028 @@
+{
+  "schema": "BR360-3",
+  "pack_version": "3.0.0",
+  "audit": {
+    "id": "br360-622adff8d442",
+    "mode": "READ_ONLY",
+    "profile": "AUTO",
+    "created_at": "2026-09-27T18:24:14+00:00",
+    "network_intent": []
+  },
+  "project_profile": {
+    "facts": [
+      "commercial_product",
+      "has_auth",
+      "has_backend",
+      "has_ci",
+      "has_containers",
+      "has_persistent_data",
+      "language.javascript",
+      "production_service"
+    ],
+    "evidence": [
+      {
+        "fact": "language.javascript",
+        "reason": "package.json",
+        "location": "package.json"
+      },
+      {
+        "fact": "has_ci",
+        "reason": ".github/workflows"
+      },
+      {
+        "fact": "has_containers",
+        "reason": "container config"
+      },
+      {
+        "fact": "production_service",
+        "reason": "hosting config"
+      },
+      {
+        "fact": "has_persistent_data",
+        "reason": "database schema/migration surface"
+      },
+      {
+        "fact": "has_auth",
+        "reason": "auth pattern"
+      }
+    ],
+    "warnings": []
+  },
+  "applicability": {
+    "controls": [
+      {
+        "control_id": "BR360-PROD-001",
+        "domain": "product",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-PROD-002",
+        "domain": "product",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-PROD-003",
+        "domain": "product",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-PROD-004",
+        "domain": "product",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-PROD-005",
+        "domain": "product",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "REAL_WORLD_REQUIRED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-UX-001",
+        "domain": "ux",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-UX-002",
+        "domain": "ux",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "REAL_WORLD_REQUIRED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-UX-003",
+        "domain": "ux",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-UX-004",
+        "domain": "ux",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-UX-005",
+        "domain": "ux",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-A11Y-001",
+        "domain": "accessibility",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-A11Y-002",
+        "domain": "accessibility",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "AUTOMATED",
+        "detectors": [
+          "builtin.a11y_scan_evidence"
+        ]
+      },
+      {
+        "control_id": "BR360-A11Y-003",
+        "domain": "accessibility",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-A11Y-004",
+        "domain": "accessibility",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-A11Y-005",
+        "domain": "accessibility",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-PERF-001",
+        "domain": "performance",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-PERF-002",
+        "domain": "performance",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-PERF-003",
+        "domain": "performance",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-PERF-004",
+        "domain": "performance",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "AUTOMATED",
+        "detectors": [
+          "builtin.performance_baseline"
+        ]
+      },
+      {
+        "control_id": "BR360-PERF-005",
+        "domain": "performance",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-SEC-001",
+        "domain": "security",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-SEC-002",
+        "domain": "security",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "AUTOMATED",
+        "detectors": [
+          "builtin.secret_scan"
+        ]
+      },
+      {
+        "control_id": "BR360-SEC-003",
+        "domain": "security",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-SEC-004",
+        "domain": "security",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-SEC-005",
+        "domain": "security",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "AUTOMATED",
+        "detectors": [
+          "builtin.security_headers"
+        ]
+      },
+      {
+        "control_id": "BR360-SEC-006",
+        "domain": "security",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-SC-001",
+        "domain": "supply-chain",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "AUTOMATED",
+        "detectors": [
+          "builtin.dependency_inventory"
+        ]
+      },
+      {
+        "control_id": "BR360-SC-002",
+        "domain": "supply-chain",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-SC-003",
+        "domain": "supply-chain",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-SC-004",
+        "domain": "supply-chain",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-SC-005",
+        "domain": "supply-chain",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-SC-006",
+        "domain": "supply-chain",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-API-001",
+        "domain": "api",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "AUTOMATED",
+        "detectors": [
+          "builtin.api_contract"
+        ]
+      },
+      {
+        "control_id": "BR360-API-002",
+        "domain": "api",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-API-003",
+        "domain": "api",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-API-004",
+        "domain": "api",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "AUTOMATED",
+        "detectors": [
+          "builtin.api_breaking_baseline"
+        ]
+      },
+      {
+        "control_id": "BR360-API-005",
+        "domain": "api",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-API-006",
+        "domain": "api",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-AUTHZ-001",
+        "domain": "authorization",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-AUTHZ-002",
+        "domain": "authorization",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-AUTHZ-003",
+        "domain": "authorization",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "AUTOMATED",
+        "detectors": [
+          "builtin.authz_tests"
+        ]
+      },
+      {
+        "control_id": "BR360-AUTHZ-004",
+        "domain": "authorization",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-AUTHZ-005",
+        "domain": "authorization",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-PRIV-001",
+        "domain": "privacy",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-PRIV-002",
+        "domain": "privacy",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-PRIV-003",
+        "domain": "privacy",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-PRIV-004",
+        "domain": "privacy",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "LEGAL_REVIEW",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-PRIV-005",
+        "domain": "privacy",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-AI-001",
+        "domain": "ai",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "AUTOMATED",
+        "detectors": [
+          "builtin.ai_inventory"
+        ]
+      },
+      {
+        "control_id": "BR360-AI-002",
+        "domain": "ai",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-AI-003",
+        "domain": "ai",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-AI-004",
+        "domain": "ai",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-AI-005",
+        "domain": "ai",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-AI-006",
+        "domain": "ai",
+        "applicability": "NOT_APPLICABLE",
+        "reason": "no applicability fact matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-DATA-001",
+        "domain": "data",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "AUTOMATED",
+        "detectors": [
+          "builtin.data_schema"
+        ]
+      },
+      {
+        "control_id": "BR360-DATA-002",
+        "domain": "data",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-DATA-003",
+        "domain": "data",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "REAL_WORLD_REQUIRED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-DATA-004",
+        "domain": "data",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-DATA-005",
+        "domain": "data",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-RUN-001",
+        "domain": "production",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "AUTOMATED",
+        "detectors": [
+          "builtin.environment_config"
+        ]
+      },
+      {
+        "control_id": "BR360-RUN-002",
+        "domain": "production",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-RUN-003",
+        "domain": "production",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-RUN-004",
+        "domain": "production",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "AUTOMATED",
+        "detectors": [
+          "builtin.production_debug"
+        ]
+      },
+      {
+        "control_id": "BR360-RUN-005",
+        "domain": "production",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-SRE-001",
+        "domain": "sre",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-SRE-002",
+        "domain": "sre",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-SRE-003",
+        "domain": "sre",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-SRE-004",
+        "domain": "sre",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-SRE-005",
+        "domain": "sre",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-OBS-001",
+        "domain": "observability",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-OBS-002",
+        "domain": "observability",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-OBS-003",
+        "domain": "observability",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-OBS-004",
+        "domain": "observability",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-OBS-005",
+        "domain": "observability",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-RES-001",
+        "domain": "resilience",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "AUTOMATED",
+        "detectors": [
+          "builtin.resilience_bounds"
+        ]
+      },
+      {
+        "control_id": "BR360-RES-002",
+        "domain": "resilience",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-RES-003",
+        "domain": "resilience",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-RES-004",
+        "domain": "resilience",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "REAL_WORLD_REQUIRED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-RES-005",
+        "domain": "resilience",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-ANA-001",
+        "domain": "analytics",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-ANA-002",
+        "domain": "analytics",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "REAL_WORLD_REQUIRED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-ANA-003",
+        "domain": "analytics",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-ANA-004",
+        "domain": "analytics",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-ANA-005",
+        "domain": "analytics",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-EXP-001",
+        "domain": "experimentation",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-EXP-002",
+        "domain": "experimentation",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-EXP-003",
+        "domain": "experimentation",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-EXP-004",
+        "domain": "experimentation",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-EXP-005",
+        "domain": "experimentation",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-BIZ-001",
+        "domain": "business",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "REAL_WORLD_REQUIRED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-BIZ-002",
+        "domain": "business",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-BIZ-003",
+        "domain": "business",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "REAL_WORLD_REQUIRED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-BIZ-004",
+        "domain": "business",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "REAL_WORLD_REQUIRED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-BIZ-005",
+        "domain": "business",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "REAL_WORLD_REQUIRED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-BIZ-006",
+        "domain": "business",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "LEGAL_REVIEW",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-GROW-001",
+        "domain": "growth",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-GROW-002",
+        "domain": "growth",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "REAL_WORLD_REQUIRED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-GROW-003",
+        "domain": "growth",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-GROW-004",
+        "domain": "growth",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "REAL_WORLD_REQUIRED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-GROW-005",
+        "domain": "growth",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-RET-001",
+        "domain": "retention",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "REAL_WORLD_REQUIRED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-RET-002",
+        "domain": "retention",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "REAL_WORLD_REQUIRED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-RET-003",
+        "domain": "retention",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "REAL_WORLD_REQUIRED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-RET-004",
+        "domain": "retention",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "REAL_WORLD_REQUIRED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-RET-005",
+        "domain": "retention",
+        "applicability": "REQUIRED",
+        "reason": "applicability facts matched",
+        "automation": "REAL_WORLD_REQUIRED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-SCALE-001",
+        "domain": "scalability",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-SCALE-002",
+        "domain": "scalability",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-SCALE-003",
+        "domain": "scalability",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-SCALE-004",
+        "domain": "scalability",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "REAL_WORLD_REQUIRED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-SCALE-005",
+        "domain": "scalability",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-DOC-001",
+        "domain": "documentation",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-DOC-002",
+        "domain": "documentation",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-DOC-003",
+        "domain": "documentation",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-DOC-004",
+        "domain": "documentation",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-DOC-005",
+        "domain": "documentation",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-LIC-001",
+        "domain": "licensing",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "AUTOMATED",
+        "detectors": [
+          "builtin.license_metadata"
+        ]
+      },
+      {
+        "control_id": "BR360-LIC-002",
+        "domain": "licensing",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "SEMI_AUTOMATED",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-LIC-003",
+        "domain": "licensing",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-LIC-004",
+        "domain": "licensing",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "LEGAL_REVIEW",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-LIC-005",
+        "domain": "licensing",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-ARCH-001",
+        "domain": "architecture",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-ARCH-002",
+        "domain": "architecture",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-ARCH-003",
+        "domain": "architecture",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      },
+      {
+        "control_id": "BR360-ARCH-004",
+        "domain": "architecture",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "AUTOMATED",
+        "detectors": [
+          "builtin.arch_ownership"
+        ]
+      },
+      {
+        "control_id": "BR360-ARCH-005",
+        "domain": "architecture",
+        "applicability": "RECOMMENDED",
+        "reason": "default policy",
+        "automation": "MANUAL",
+        "detectors": []
+      }
+    ]
+  },
+  "evaluations": [
+    {
+      "control_id": "BR360-PROD-001",
+      "domain": "product",
+      "title": "Problem, target user and job-to-be-done are explicit",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-PROD-002",
+      "domain": "product",
+      "title": "Primary user journey reaches a concrete value outcome",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-PROD-003",
+      "domain": "product",
+      "title": "Activation event is defined and measurable",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-PROD-004",
+      "domain": "product",
+      "title": "Feature scope has pruning/kill criteria",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-PROD-005",
+      "domain": "product",
+      "title": "Product feedback loop exists",
+      "applicability": "RECOMMENDED",
+      "automation": "REAL_WORLD_REQUIRED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-UX-001",
+      "domain": "ux",
+      "title": "Onboarding is understandable without expert knowledge",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-UX-002",
+      "domain": "ux",
+      "title": "Time-to-value path is short and observable",
+      "applicability": "RECOMMENDED",
+      "automation": "REAL_WORLD_REQUIRED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-UX-003",
+      "domain": "ux",
+      "title": "Errors provide recovery actions",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-UX-004",
+      "domain": "ux",
+      "title": "Responsive and keyboard navigation are stable",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-UX-005",
+      "domain": "ux",
+      "title": "Simple and expert modes avoid unnecessary cognitive load",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-A11Y-001",
+      "domain": "accessibility",
+      "title": "Accessibility target and applicable standard are declared",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "MANUAL",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-A11Y-002",
+      "domain": "accessibility",
+      "title": "Automated accessibility scan has no unresolved high-impact issues",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "AUTOMATED",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-A11Y-003",
+      "domain": "accessibility",
+      "title": "Keyboard focus and visible focus are verified",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-A11Y-004",
+      "domain": "accessibility",
+      "title": "Forms and interactive controls have accessible names and errors",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-A11Y-005",
+      "domain": "accessibility",
+      "title": "Manual accessibility review covers non-automatable criteria",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "MANUAL",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-PERF-001",
+      "domain": "performance",
+      "title": "Performance budgets are explicit and versioned",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "MANUAL",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-PERF-002",
+      "domain": "performance",
+      "title": "Core Web Vitals meet the declared target when web UI applies",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-PERF-003",
+      "domain": "performance",
+      "title": "API latency and error-rate budgets are measured when API applies",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-PERF-004",
+      "domain": "performance",
+      "title": "Performance regressions are compared against a baseline",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "AUTOMATED",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-PERF-005",
+      "domain": "performance",
+      "title": "Load scenarios represent realistic concurrency or throughput",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SEC-001",
+      "domain": "security",
+      "title": "Security requirements are mapped to applicable controls",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SEC-002",
+      "domain": "security",
+      "title": "Secrets and credentials are absent from distributable source",
+      "applicability": "RECOMMENDED",
+      "automation": "AUTOMATED",
+      "status": "PASS",
+      "evidence_level": "E2_TESTED",
+      "evidence": [
+        {
+          "id": "EV-39ac8c213d01c498",
+          "type": "TEST_RESULT",
+          "level": "E2_TESTED",
+          "source": "builtin.secret_scan",
+          "summary": "Scanned 139 text files; high-confidence secret hits: 0.",
+          "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "freshness": "2026-09-27T18:24:13+00:00",
+          "authority": 0.9,
+          "confidence": 0.9,
+          "location": null
+        }
+      ],
+      "summary": "Built-in high-confidence secret scan found no matches in the scanned source surface.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SEC-003",
+      "domain": "security",
+      "title": "Input validation and output handling address injection classes",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SEC-004",
+      "domain": "security",
+      "title": "Authentication and session controls match exposure and risk",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SEC-005",
+      "domain": "security",
+      "title": "Security headers/configuration are production-safe",
+      "applicability": "RECOMMENDED",
+      "automation": "AUTOMATED",
+      "status": "PASS",
+      "evidence_level": "E1_STATIC",
+      "evidence": [
+        {
+          "id": "EV-10a7976217a8ef49",
+          "type": "CONFIG",
+          "level": "E1_STATIC",
+          "source": "builtin.security_headers",
+          "summary": "Security header signals present: ['content-security-policy', 'x-content-type-options', 'referrer-policy', 'strict-transport-security']; missing: [].",
+          "digest": "02fdfa550cd67567e6c6194f564517dc372849452d88a42ca02e34fd9d64347a",
+          "freshness": "2026-09-27T18:24:13+00:00",
+          "authority": 0.8,
+          "confidence": 0.84,
+          "location": null
+        }
+      ],
+      "summary": "At least three major production security-header controls are explicitly configured.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SEC-006",
+      "domain": "security",
+      "title": "Threat model or abuse-case analysis exists for material risks",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SC-001",
+      "domain": "supply-chain",
+      "title": "Dependency inventory is reproducible",
+      "applicability": "RECOMMENDED",
+      "automation": "AUTOMATED",
+      "status": "PASS",
+      "evidence_level": "E1_STATIC",
+      "evidence": [
+        {
+          "id": "EV-99124a09d7ac2291",
+          "type": "CONFIG",
+          "level": "E1_STATIC",
+          "source": "builtin.dependency_inventory",
+          "summary": "Dependency manifests ['package.json'] and lock/integrity files ['package-lock.json'] found.",
+          "digest": "c3f5ec9558a500772ab509a2a51c2c05595dc88553d507e5fa281ba677dd3369",
+          "freshness": "2026-09-27T18:24:13+00:00",
+          "authority": 0.9,
+          "confidence": 0.95,
+          "location": null
+        }
+      ],
+      "summary": "Dependency inventory is reproducible from manifest plus lock/integrity metadata.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SC-002",
+      "domain": "supply-chain",
+      "title": "SBOM can be produced in a standard format",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SC-003",
+      "domain": "supply-chain",
+      "title": "Known dependency vulnerabilities are normalized and deduplicated",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SC-004",
+      "domain": "supply-chain",
+      "title": "Build provenance and integrity are evidenced where release risk warrants it",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SC-005",
+      "domain": "supply-chain",
+      "title": "Dependency freshness and update governance are defined",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SC-006",
+      "domain": "supply-chain",
+      "title": "Dependency licenses are inventoried before distribution",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-API-001",
+      "domain": "api",
+      "title": "Machine-readable API contract exists when API is public or shared",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "AUTOMATED",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-API-002",
+      "domain": "api",
+      "title": "API contract passes lint and schema checks",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-API-003",
+      "domain": "api",
+      "title": "Runtime responses conform to declared schema",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-API-004",
+      "domain": "api",
+      "title": "Breaking changes are detected against a baseline",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "AUTOMATED",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-API-005",
+      "domain": "api",
+      "title": "Consumer/provider or property-based contract tests exist where valuable",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-API-006",
+      "domain": "api",
+      "title": "API errors and authorization semantics are explicit",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "MANUAL",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-AUTHZ-001",
+      "domain": "authorization",
+      "title": "Authorization model defines subject, resource and action/relation",
+      "applicability": "REQUIRED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-AUTHZ-002",
+      "domain": "authorization",
+      "title": "Tenant isolation is tested with negative cross-tenant cases",
+      "applicability": "REQUIRED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-AUTHZ-003",
+      "domain": "authorization",
+      "title": "Authorization decisions have deterministic tests",
+      "applicability": "REQUIRED",
+      "automation": "AUTOMATED",
+      "status": "PASS",
+      "evidence_level": "E1_STATIC",
+      "evidence": [
+        {
+          "id": "EV-d3fa4e5a424d1b81",
+          "type": "TEST_RESULT",
+          "level": "E1_STATIC",
+          "source": "builtin.authz_test_discovery",
+          "summary": "Authorization-related deterministic test source found in ['.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/tests/provider-contracts.test.ts', '.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/tests/http.test.ts', '.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/tests/core.test.ts', 'tests/provider-contracts.test.ts', 'tests/http.test.ts', 'tests/core.test.ts'].",
+          "digest": "74bd1cbd67d0d4be85d96df861034221d1f18a9737c5a63c0240a876529e3abc",
+          "freshness": "2026-09-27T18:24:13+00:00",
+          "authority": 0.8,
+          "confidence": 0.88,
+          "location": null
+        }
+      ],
+      "summary": "Authorization decision tests are present in the source tree. This proves test presence, not runtime success.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-AUTHZ-004",
+      "domain": "authorization",
+      "title": "Entitlements are separated from authentication",
+      "applicability": "REQUIRED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-AUTHZ-005",
+      "domain": "authorization",
+      "title": "Privileged actions require explicit authorization evidence",
+      "applicability": "REQUIRED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-PRIV-001",
+      "domain": "privacy",
+      "title": "Personal/sensitive data inventory exists",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-PRIV-002",
+      "domain": "privacy",
+      "title": "Data minimization and purpose limitation are evidenced",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-PRIV-003",
+      "domain": "privacy",
+      "title": "Retention and deletion rules are implemented where applicable",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-PRIV-004",
+      "domain": "privacy",
+      "title": "Consent/legal-basis obligations are identified by jurisdiction",
+      "applicability": "RECOMMENDED",
+      "automation": "LEGAL_REVIEW",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-PRIV-005",
+      "domain": "privacy",
+      "title": "Sensitive data is excluded from logs/telemetry by design",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-AI-001",
+      "domain": "ai",
+      "title": "AI providers, models and data flows are inventoried",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "AUTOMATED",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-AI-002",
+      "domain": "ai",
+      "title": "Prompt/tool injection risks are modeled and tested",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-AI-003",
+      "domain": "ai",
+      "title": "Model quality has task-specific evals and failure taxonomy",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-AI-004",
+      "domain": "ai",
+      "title": "Grounding, uncertainty or abstention is handled where needed",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "MANUAL",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-AI-005",
+      "domain": "ai",
+      "title": "AI cost, rate and provider failure guardrails exist",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-AI-006",
+      "domain": "ai",
+      "title": "High-impact AI actions require suitable human control",
+      "applicability": "NOT_APPLICABLE",
+      "automation": "MANUAL",
+      "status": "NOT_APPLICABLE",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control is not applicable according to the applicability engine.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-DATA-001",
+      "domain": "data",
+      "title": "Data schemas and invariants are explicit",
+      "applicability": "RECOMMENDED",
+      "automation": "AUTOMATED",
+      "status": "PASS",
+      "evidence_level": "E1_STATIC",
+      "evidence": [
+        {
+          "id": "EV-93a0b7e1d52b4ce2",
+          "type": "SCHEMA",
+          "level": "E1_STATIC",
+          "source": "builtin.data_schema",
+          "summary": "Schema/model/migration artifacts detected: ['.recursive/runs/run-20260927t182410z-b0a1a911/baseline/snapshot/supabase/migrations/202609270001_agentforge.sql', 'schemas/evidencereport.schema.json', 'supabase/migrations/202609270001_agentforge.sql', '.recursive/runs/run-20260927t182410z-b0a1a911/baseline/snapshot/schemas/evidencereport.schema.json', 'schemas/projectspec.schema.json', '.recursive/runs/run-20260927t182410z-b0a1a911/baseline/snapshot/schemas/projectspec.schema.json'].",
+          "digest": "23ae988f2da1119b92c8c8ea3a24168f37c892f34cf6d1fb52773a8772696bd0",
+          "freshness": "2026-09-27T18:24:13+00:00",
+          "authority": 0.85,
+          "confidence": 0.9,
+          "location": null
+        },
+        {
+          "id": "EV-ea7e5221cb0f64d7",
+          "type": "CONFIG",
+          "level": "E1_STATIC",
+          "source": "builtin.data_schema",
+          "summary": "Invariant/validation signals detected in: ['README.md', 'docs/PROMPT_REPRISE_VSCODE.md', 'docs/PRODUCT_REQUIREMENTS_ORIGINAL.md', '.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/README.md', '.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/docs/PROMPT_REPRISE_VSCODE.md', '.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/docs/PRODUCT_REQUIREMENTS_ORIGINAL.md', '.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/supabase/migrations/202609270001_agentforge.sql', '.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/apps/web/server.ts', '.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/packages/core/research.ts', '.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/packages/core/security.ts'].",
+          "digest": "856c50a2b28d886e386c7c0b8b2dda02a8eb78ff878bd6d1c96c685094e15123",
+          "freshness": "2026-09-27T18:24:13+00:00",
+          "authority": 0.8,
+          "confidence": 0.82,
+          "location": null
+        }
+      ],
+      "summary": "Data schema artifacts and explicit invariant/validation signals are present.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-DATA-002",
+      "domain": "data",
+      "title": "Migrations are versioned and recoverable",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-DATA-003",
+      "domain": "data",
+      "title": "Backups are restorable, not merely configured",
+      "applicability": "RECOMMENDED",
+      "automation": "REAL_WORLD_REQUIRED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-DATA-004",
+      "domain": "data",
+      "title": "Idempotency and integrity are tested for critical writes",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-DATA-005",
+      "domain": "data",
+      "title": "Data ownership and lineage are documented for critical datasets",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-RUN-001",
+      "domain": "production",
+      "title": "Environment configuration is explicit and secret-safe",
+      "applicability": "REQUIRED",
+      "automation": "AUTOMATED",
+      "status": "PASS",
+      "evidence_level": "E1_STATIC",
+      "evidence": [
+        {
+          "id": "EV-cc3c86e93a402aea",
+          "type": "CONFIG",
+          "level": "E1_STATIC",
+          "source": "builtin.env_config",
+          "summary": "Environment template(s) found: ['.recursive/runs/run-20260927t182410z-b0a1a911/baseline/snapshot/.env.example', '.env.example'].",
+          "digest": "ff5faef3be388ceda81c5830e4e3850356c2fb55e5b4e2f82c9af3ece7955cbf",
+          "freshness": "2026-09-27T18:24:13+00:00",
+          "authority": 0.85,
+          "confidence": 0.9,
+          "location": null
+        },
+        {
+          "id": "EV-b5ecccc5cb881136",
+          "type": "CONFIG",
+          "level": "E1_STATIC",
+          "source": "builtin.env_config",
+          "summary": "Deployment/config files found: ['.recursive/runs/run-20260927t182410z-b0a1a911/baseline/snapshot/railway.json', 'railway.json'].",
+          "digest": "d9f79a57a4f1e8764dcfe68d5d53d4832dabb800d4e799374fc380c83c50cabb",
+          "freshness": "2026-09-27T18:24:13+00:00",
+          "authority": 0.8,
+          "confidence": 0.85,
+          "location": null
+        }
+      ],
+      "summary": "Explicit environment configuration template exists and no suspicious committed secret assignment was detected.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-RUN-002",
+      "domain": "production",
+      "title": "Health and readiness checks reflect real dependencies",
+      "applicability": "REQUIRED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-RUN-003",
+      "domain": "production",
+      "title": "Deployment has rollback or safe-forward recovery",
+      "applicability": "REQUIRED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-RUN-004",
+      "domain": "production",
+      "title": "Debug/development behavior is disabled in production",
+      "applicability": "REQUIRED",
+      "automation": "AUTOMATED",
+      "status": "PASS",
+      "evidence_level": "E1_STATIC",
+      "evidence": [
+        {
+          "id": "EV-bbecf808a8904bc5",
+          "type": "CONFIG",
+          "level": "E1_STATIC",
+          "source": "builtin.production_debug",
+          "summary": "Explicit production/debug-off configuration detected in: ['.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/Dockerfile', 'Dockerfile'].",
+          "digest": "fc8679173855f7c2d5f0ef33de7eaa103b225d3582514d848660148aaf4fcc94",
+          "freshness": "2026-09-27T18:24:13+00:00",
+          "authority": 0.85,
+          "confidence": 0.9,
+          "location": null
+        }
+      ],
+      "summary": "Production or debug-off configuration is explicit and no obvious debug-on pattern was detected.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-RUN-005",
+      "domain": "production",
+      "title": "Operational runbook covers common failures",
+      "applicability": "REQUIRED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SRE-001",
+      "domain": "sre",
+      "title": "Service-level indicators are defined for user-important behavior",
+      "applicability": "REQUIRED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SRE-002",
+      "domain": "sre",
+      "title": "SLO targets and windows are explicit where service operation applies",
+      "applicability": "REQUIRED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SRE-003",
+      "domain": "sre",
+      "title": "Error budget and burn-rate policy exists for critical services",
+      "applicability": "REQUIRED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SRE-004",
+      "domain": "sre",
+      "title": "Service ownership and incident escalation are explicit",
+      "applicability": "REQUIRED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SRE-005",
+      "domain": "sre",
+      "title": "Capacity risks are measured before scaling claims",
+      "applicability": "REQUIRED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-OBS-001",
+      "domain": "observability",
+      "title": "Meaningful metrics exist for health and user-critical paths",
+      "applicability": "REQUIRED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-OBS-002",
+      "domain": "observability",
+      "title": "Structured logs support diagnosis without leaking sensitive data",
+      "applicability": "REQUIRED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-OBS-003",
+      "domain": "observability",
+      "title": "Distributed traces or equivalent correlation exist when architecture needs them",
+      "applicability": "REQUIRED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-OBS-004",
+      "domain": "observability",
+      "title": "Errors are grouped, actionable and linked to release/context",
+      "applicability": "REQUIRED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-OBS-005",
+      "domain": "observability",
+      "title": "Alerts are actionable and mapped to ownership",
+      "applicability": "REQUIRED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-RES-001",
+      "domain": "resilience",
+      "title": "Timeouts and retry policies are bounded",
+      "applicability": "REQUIRED",
+      "automation": "AUTOMATED",
+      "status": "PASS",
+      "evidence_level": "E1_STATIC",
+      "evidence": [
+        {
+          "id": "EV-fddd9fcef3f23787",
+          "type": "CONFIG",
+          "level": "E1_STATIC",
+          "source": "builtin.resilience_bounds",
+          "summary": "Bounded timeout signals found in ['.recursive/CODEX_CONTEXT.md', '.recursive/COMMAND_MATRIX.json', '.recursive/TARGET_PROFILE.json', '.recursive/AGENT_CONTEXT.md', '.recursive/runs/run-20260927T182410Z-b0a1a911/VERIFICATION.json', '.recursive/runs/run-20260927T182410Z-b0a1a911/verification/973cf6bea6b148bf9240cd1f00a5ed2f/cmd-07.json', '.recursive/runs/run-20260927T182410Z-b0a1a911/verification/973cf6bea6b148bf9240cd1f00a5ed2f/cmd-04.json', '.recursive/runs/run-20260927T182410Z-b0a1a911/verification/973cf6bea6b148bf9240cd1f00a5ed2f/cmd-02.json', '.recursive/runs/run-20260927T182410Z-b0a1a911/verification/973cf6bea6b148bf9240cd1f00a5ed2f/cmd-06.json', '.recursive/runs/run-20260927T182410Z-b0a1a911/verification/973cf6bea6b148bf9240cd1f00a5ed2f/cmd-09.json'].",
+          "digest": "a15c25ffea1edbfcf5e54e99ab1f281c27984254b99e0654c1372101b7cdbf72",
+          "freshness": "2026-09-27T18:24:13+00:00",
+          "authority": 0.8,
+          "confidence": 0.82,
+          "location": null
+        },
+        {
+          "id": "EV-3b1ec44cf7c3fd37",
+          "type": "CONFIG",
+          "level": "E1_STATIC",
+          "source": "builtin.resilience_bounds",
+          "summary": "Bounded retry/attempt signals found in ['.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/supabase/migrations/202609270001_agentforge.sql', 'supabase/migrations/202609270001_agentforge.sql'].",
+          "digest": "939e9306bf2c147a2ee7985be28177d7ba500d5b3763347a79b76a9b5cece3d2",
+          "freshness": "2026-09-27T18:24:13+00:00",
+          "authority": 0.8,
+          "confidence": 0.82,
+          "location": null
+        }
+      ],
+      "summary": "Timeout and retry policies both show explicit bounded configuration signals.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-RES-002",
+      "domain": "resilience",
+      "title": "Dependency failures have graceful degradation or explicit failure modes",
+      "applicability": "REQUIRED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-RES-003",
+      "domain": "resilience",
+      "title": "Backup and disaster recovery objectives are explicit",
+      "applicability": "REQUIRED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-RES-004",
+      "domain": "resilience",
+      "title": "Recovery procedures are tested periodically",
+      "applicability": "REQUIRED",
+      "automation": "REAL_WORLD_REQUIRED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-RES-005",
+      "domain": "resilience",
+      "title": "Third-party failure and lock-in risks have mitigations",
+      "applicability": "REQUIRED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-ANA-001",
+      "domain": "analytics",
+      "title": "Activation can be measured",
+      "applicability": "REQUIRED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-ANA-002",
+      "domain": "analytics",
+      "title": "Retention or repeat use can be measured",
+      "applicability": "REQUIRED",
+      "automation": "REAL_WORLD_REQUIRED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-ANA-003",
+      "domain": "analytics",
+      "title": "Conversion funnel can be measured end-to-end",
+      "applicability": "REQUIRED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-ANA-004",
+      "domain": "analytics",
+      "title": "Feature usage can be measured without vendor lock-in assumptions",
+      "applicability": "REQUIRED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-ANA-005",
+      "domain": "analytics",
+      "title": "Analytics collection respects declared privacy choices",
+      "applicability": "REQUIRED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-EXP-001",
+      "domain": "experimentation",
+      "title": "Feature flag lifecycle and ownership are governed",
+      "applicability": "REQUIRED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-EXP-002",
+      "domain": "experimentation",
+      "title": "Experiments declare hypothesis and decision metric",
+      "applicability": "REQUIRED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-EXP-003",
+      "domain": "experimentation",
+      "title": "Experiment guardrails protect reliability and user harm metrics",
+      "applicability": "REQUIRED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-EXP-004",
+      "domain": "experimentation",
+      "title": "Rollouts are staged and reversible when risk warrants it",
+      "applicability": "REQUIRED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-EXP-005",
+      "domain": "experimentation",
+      "title": "Exposure/evaluation events are traceable",
+      "applicability": "REQUIRED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-BIZ-001",
+      "domain": "business",
+      "title": "Value proposition and target customer are evidence-backed",
+      "applicability": "REQUIRED",
+      "automation": "REAL_WORLD_REQUIRED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-BIZ-002",
+      "domain": "business",
+      "title": "Pricing and packaging map to delivered value and cost",
+      "applicability": "REQUIRED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-BIZ-003",
+      "domain": "business",
+      "title": "Acquisition path is defined and measurable",
+      "applicability": "REQUIRED",
+      "automation": "REAL_WORLD_REQUIRED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-BIZ-004",
+      "domain": "business",
+      "title": "Support burden and gross-margin drivers are measured",
+      "applicability": "REQUIRED",
+      "automation": "REAL_WORLD_REQUIRED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-BIZ-005",
+      "domain": "business",
+      "title": "Paying-customer or equivalent value evidence is distinguished from intent",
+      "applicability": "REQUIRED",
+      "automation": "REAL_WORLD_REQUIRED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-BIZ-006",
+      "domain": "business",
+      "title": "Material legal/commercial blockers are identified",
+      "applicability": "REQUIRED",
+      "automation": "LEGAL_REVIEW",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-GROW-001",
+      "domain": "growth",
+      "title": "Acquisition sources are attributed consistently",
+      "applicability": "REQUIRED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-GROW-002",
+      "domain": "growth",
+      "title": "Visitor-to-value conversion is measured",
+      "applicability": "REQUIRED",
+      "automation": "REAL_WORLD_REQUIRED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-GROW-003",
+      "domain": "growth",
+      "title": "Discoverability/SEO readiness is assessed when public web acquisition applies",
+      "applicability": "REQUIRED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-GROW-004",
+      "domain": "growth",
+      "title": "Growth loops/referrals are measured rather than assumed",
+      "applicability": "REQUIRED",
+      "automation": "REAL_WORLD_REQUIRED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-GROW-005",
+      "domain": "growth",
+      "title": "Growth experiments are prioritized by evidence and cost",
+      "applicability": "REQUIRED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-RET-001",
+      "domain": "retention",
+      "title": "Cohort retention is measured for recurring-use products",
+      "applicability": "REQUIRED",
+      "automation": "REAL_WORLD_REQUIRED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-RET-002",
+      "domain": "retention",
+      "title": "Churn/cancellation or abandonment reasons are categorized",
+      "applicability": "REQUIRED",
+      "automation": "REAL_WORLD_REQUIRED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-RET-003",
+      "domain": "retention",
+      "title": "Repeat use is distinguished from account existence",
+      "applicability": "REQUIRED",
+      "automation": "REAL_WORLD_REQUIRED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-RET-004",
+      "domain": "retention",
+      "title": "Support/friction signals feed retention decisions",
+      "applicability": "REQUIRED",
+      "automation": "REAL_WORLD_REQUIRED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-RET-005",
+      "domain": "retention",
+      "title": "Renewal/continued value evidence exists for paid recurring offers",
+      "applicability": "REQUIRED",
+      "automation": "REAL_WORLD_REQUIRED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SCALE-001",
+      "domain": "scalability",
+      "title": "Known bottlenecks are identified with evidence",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SCALE-002",
+      "domain": "scalability",
+      "title": "Data growth limits and migration paths are understood",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SCALE-003",
+      "domain": "scalability",
+      "title": "Async jobs/queues have backpressure and failure handling when present",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SCALE-004",
+      "domain": "scalability",
+      "title": "Cost scales within acceptable bounds",
+      "applicability": "RECOMMENDED",
+      "automation": "REAL_WORLD_REQUIRED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-SCALE-005",
+      "domain": "scalability",
+      "title": "Operational workload scales beyond a single operator where needed",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-DOC-001",
+      "domain": "documentation",
+      "title": "Quickstart reaches a first successful outcome",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-DOC-002",
+      "domain": "documentation",
+      "title": "Architecture documentation covers context, constraints and quality goals",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-DOC-003",
+      "domain": "documentation",
+      "title": "Important decisions are traceable with alternatives and consequences",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-DOC-004",
+      "domain": "documentation",
+      "title": "Operational and security procedures are documented",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-DOC-005",
+      "domain": "documentation",
+      "title": "API/user documentation reflects current behavior",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-LIC-001",
+      "domain": "licensing",
+      "title": "Project license and distribution terms are explicit",
+      "applicability": "RECOMMENDED",
+      "automation": "AUTOMATED",
+      "status": "FAIL",
+      "evidence_level": "E1_STATIC",
+      "evidence": [
+        {
+          "id": "EV-dbcb6b28ad9dad0d",
+          "type": "OBSERVATION",
+          "level": "E1_STATIC",
+          "source": "builtin.license",
+          "summary": "No LICENSE/COPYING/NOTICE file or package license metadata was found.",
+          "digest": null,
+          "freshness": "2026-09-27T18:24:13+00:00",
+          "authority": 0.8,
+          "confidence": 0.9,
+          "location": null
+        }
+      ],
+      "summary": "Project distribution/license terms are not explicit in the inspected source tree.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-LIC-002",
+      "domain": "licensing",
+      "title": "Third-party license inventory is available",
+      "applicability": "RECOMMENDED",
+      "automation": "SEMI_AUTOMATED",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-LIC-003",
+      "domain": "licensing",
+      "title": "Required notices/attribution are tracked",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-LIC-004",
+      "domain": "licensing",
+      "title": "Copyleft/share-alike/commercial boundaries are reviewed before reuse",
+      "applicability": "RECOMMENDED",
+      "automation": "LEGAL_REVIEW",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-LIC-005",
+      "domain": "licensing",
+      "title": "Open-source and proprietary scopes are explicit in mixed-license projects",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-ARCH-001",
+      "domain": "architecture",
+      "title": "System context and major boundaries are documented",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-ARCH-002",
+      "domain": "architecture",
+      "title": "Quality attributes and constraints drive architecture decisions",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-ARCH-003",
+      "domain": "architecture",
+      "title": "Architecture decisions record alternatives and consequences",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-ARCH-004",
+      "domain": "architecture",
+      "title": "Critical dependencies and ownership boundaries are explicit",
+      "applicability": "RECOMMENDED",
+      "automation": "AUTOMATED",
+      "status": "PARTIAL",
+      "evidence_level": "E1_STATIC",
+      "evidence": [
+        {
+          "id": "EV-1e2da6b876e5840c",
+          "type": "DOCUMENTATION",
+          "level": "E1_STATIC",
+          "source": "builtin.arch_ownership",
+          "summary": "Dependency/architecture boundary evidence: manifests=['package.json'], architecture_docs=['.recursive/runs/run-20260927t182410z-b0a1a911/baseline/snapshot/architecture.md', 'architecture.md'].",
+          "digest": "174a9b1130496c366fc34e89533a6a48047dc939ac4e957032571d1ea21fa0a1",
+          "freshness": "2026-09-27T18:24:13+00:00",
+          "authority": 0.8,
+          "confidence": 0.85,
+          "location": null
+        }
+      ],
+      "summary": "Only part of dependency/ownership boundary evidence is explicit.",
+      "source_method": "builtin"
+    },
+    {
+      "control_id": "BR360-ARCH-005",
+      "domain": "architecture",
+      "title": "Architectural risks and debt are visible in backlog/governance",
+      "applicability": "RECOMMENDED",
+      "automation": "MANUAL",
+      "status": "NOT_TESTED",
+      "evidence_level": "E0_CLAIM_ONLY",
+      "evidence": [],
+      "summary": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "source_method": "builtin"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "EV-39ac8c213d01c498",
+      "type": "TEST_RESULT",
+      "level": "E2_TESTED",
+      "source": "builtin.secret_scan",
+      "summary": "Scanned 139 text files; high-confidence secret hits: 0.",
+      "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "freshness": "2026-09-27T18:24:13+00:00",
+      "authority": 0.9,
+      "confidence": 0.9,
+      "location": null
+    },
+    {
+      "id": "EV-10a7976217a8ef49",
+      "type": "CONFIG",
+      "level": "E1_STATIC",
+      "source": "builtin.security_headers",
+      "summary": "Security header signals present: ['content-security-policy', 'x-content-type-options', 'referrer-policy', 'strict-transport-security']; missing: [].",
+      "digest": "02fdfa550cd67567e6c6194f564517dc372849452d88a42ca02e34fd9d64347a",
+      "freshness": "2026-09-27T18:24:13+00:00",
+      "authority": 0.8,
+      "confidence": 0.84,
+      "location": null
+    },
+    {
+      "id": "EV-99124a09d7ac2291",
+      "type": "CONFIG",
+      "level": "E1_STATIC",
+      "source": "builtin.dependency_inventory",
+      "summary": "Dependency manifests ['package.json'] and lock/integrity files ['package-lock.json'] found.",
+      "digest": "c3f5ec9558a500772ab509a2a51c2c05595dc88553d507e5fa281ba677dd3369",
+      "freshness": "2026-09-27T18:24:13+00:00",
+      "authority": 0.9,
+      "confidence": 0.95,
+      "location": null
+    },
+    {
+      "id": "EV-d3fa4e5a424d1b81",
+      "type": "TEST_RESULT",
+      "level": "E1_STATIC",
+      "source": "builtin.authz_test_discovery",
+      "summary": "Authorization-related deterministic test source found in ['.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/tests/provider-contracts.test.ts', '.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/tests/http.test.ts', '.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/tests/core.test.ts', 'tests/provider-contracts.test.ts', 'tests/http.test.ts', 'tests/core.test.ts'].",
+      "digest": "74bd1cbd67d0d4be85d96df861034221d1f18a9737c5a63c0240a876529e3abc",
+      "freshness": "2026-09-27T18:24:13+00:00",
+      "authority": 0.8,
+      "confidence": 0.88,
+      "location": null
+    },
+    {
+      "id": "EV-93a0b7e1d52b4ce2",
+      "type": "SCHEMA",
+      "level": "E1_STATIC",
+      "source": "builtin.data_schema",
+      "summary": "Schema/model/migration artifacts detected: ['.recursive/runs/run-20260927t182410z-b0a1a911/baseline/snapshot/supabase/migrations/202609270001_agentforge.sql', 'schemas/evidencereport.schema.json', 'supabase/migrations/202609270001_agentforge.sql', '.recursive/runs/run-20260927t182410z-b0a1a911/baseline/snapshot/schemas/evidencereport.schema.json', 'schemas/projectspec.schema.json', '.recursive/runs/run-20260927t182410z-b0a1a911/baseline/snapshot/schemas/projectspec.schema.json'].",
+      "digest": "23ae988f2da1119b92c8c8ea3a24168f37c892f34cf6d1fb52773a8772696bd0",
+      "freshness": "2026-09-27T18:24:13+00:00",
+      "authority": 0.85,
+      "confidence": 0.9,
+      "location": null
+    },
+    {
+      "id": "EV-ea7e5221cb0f64d7",
+      "type": "CONFIG",
+      "level": "E1_STATIC",
+      "source": "builtin.data_schema",
+      "summary": "Invariant/validation signals detected in: ['README.md', 'docs/PROMPT_REPRISE_VSCODE.md', 'docs/PRODUCT_REQUIREMENTS_ORIGINAL.md', '.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/README.md', '.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/docs/PROMPT_REPRISE_VSCODE.md', '.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/docs/PRODUCT_REQUIREMENTS_ORIGINAL.md', '.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/supabase/migrations/202609270001_agentforge.sql', '.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/apps/web/server.ts', '.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/packages/core/research.ts', '.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/packages/core/security.ts'].",
+      "digest": "856c50a2b28d886e386c7c0b8b2dda02a8eb78ff878bd6d1c96c685094e15123",
+      "freshness": "2026-09-27T18:24:13+00:00",
+      "authority": 0.8,
+      "confidence": 0.82,
+      "location": null
+    },
+    {
+      "id": "EV-cc3c86e93a402aea",
+      "type": "CONFIG",
+      "level": "E1_STATIC",
+      "source": "builtin.env_config",
+      "summary": "Environment template(s) found: ['.recursive/runs/run-20260927t182410z-b0a1a911/baseline/snapshot/.env.example', '.env.example'].",
+      "digest": "ff5faef3be388ceda81c5830e4e3850356c2fb55e5b4e2f82c9af3ece7955cbf",
+      "freshness": "2026-09-27T18:24:13+00:00",
+      "authority": 0.85,
+      "confidence": 0.9,
+      "location": null
+    },
+    {
+      "id": "EV-b5ecccc5cb881136",
+      "type": "CONFIG",
+      "level": "E1_STATIC",
+      "source": "builtin.env_config",
+      "summary": "Deployment/config files found: ['.recursive/runs/run-20260927t182410z-b0a1a911/baseline/snapshot/railway.json', 'railway.json'].",
+      "digest": "d9f79a57a4f1e8764dcfe68d5d53d4832dabb800d4e799374fc380c83c50cabb",
+      "freshness": "2026-09-27T18:24:13+00:00",
+      "authority": 0.8,
+      "confidence": 0.85,
+      "location": null
+    },
+    {
+      "id": "EV-bbecf808a8904bc5",
+      "type": "CONFIG",
+      "level": "E1_STATIC",
+      "source": "builtin.production_debug",
+      "summary": "Explicit production/debug-off configuration detected in: ['.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/Dockerfile', 'Dockerfile'].",
+      "digest": "fc8679173855f7c2d5f0ef33de7eaa103b225d3582514d848660148aaf4fcc94",
+      "freshness": "2026-09-27T18:24:13+00:00",
+      "authority": 0.85,
+      "confidence": 0.9,
+      "location": null
+    },
+    {
+      "id": "EV-fddd9fcef3f23787",
+      "type": "CONFIG",
+      "level": "E1_STATIC",
+      "source": "builtin.resilience_bounds",
+      "summary": "Bounded timeout signals found in ['.recursive/CODEX_CONTEXT.md', '.recursive/COMMAND_MATRIX.json', '.recursive/TARGET_PROFILE.json', '.recursive/AGENT_CONTEXT.md', '.recursive/runs/run-20260927T182410Z-b0a1a911/VERIFICATION.json', '.recursive/runs/run-20260927T182410Z-b0a1a911/verification/973cf6bea6b148bf9240cd1f00a5ed2f/cmd-07.json', '.recursive/runs/run-20260927T182410Z-b0a1a911/verification/973cf6bea6b148bf9240cd1f00a5ed2f/cmd-04.json', '.recursive/runs/run-20260927T182410Z-b0a1a911/verification/973cf6bea6b148bf9240cd1f00a5ed2f/cmd-02.json', '.recursive/runs/run-20260927T182410Z-b0a1a911/verification/973cf6bea6b148bf9240cd1f00a5ed2f/cmd-06.json', '.recursive/runs/run-20260927T182410Z-b0a1a911/verification/973cf6bea6b148bf9240cd1f00a5ed2f/cmd-09.json'].",
+      "digest": "a15c25ffea1edbfcf5e54e99ab1f281c27984254b99e0654c1372101b7cdbf72",
+      "freshness": "2026-09-27T18:24:13+00:00",
+      "authority": 0.8,
+      "confidence": 0.82,
+      "location": null
+    },
+    {
+      "id": "EV-3b1ec44cf7c3fd37",
+      "type": "CONFIG",
+      "level": "E1_STATIC",
+      "source": "builtin.resilience_bounds",
+      "summary": "Bounded retry/attempt signals found in ['.recursive/runs/run-20260927T182410Z-b0a1a911/baseline/snapshot/supabase/migrations/202609270001_agentforge.sql', 'supabase/migrations/202609270001_agentforge.sql'].",
+      "digest": "939e9306bf2c147a2ee7985be28177d7ba500d5b3763347a79b76a9b5cece3d2",
+      "freshness": "2026-09-27T18:24:13+00:00",
+      "authority": 0.8,
+      "confidence": 0.82,
+      "location": null
+    },
+    {
+      "id": "EV-dbcb6b28ad9dad0d",
+      "type": "OBSERVATION",
+      "level": "E1_STATIC",
+      "source": "builtin.license",
+      "summary": "No LICENSE/COPYING/NOTICE file or package license metadata was found.",
+      "digest": null,
+      "freshness": "2026-09-27T18:24:13+00:00",
+      "authority": 0.8,
+      "confidence": 0.9,
+      "location": null
+    },
+    {
+      "id": "EV-1e2da6b876e5840c",
+      "type": "DOCUMENTATION",
+      "level": "E1_STATIC",
+      "source": "builtin.arch_ownership",
+      "summary": "Dependency/architecture boundary evidence: manifests=['package.json'], architecture_docs=['.recursive/runs/run-20260927t182410z-b0a1a911/baseline/snapshot/architecture.md', 'architecture.md'].",
+      "digest": "174a9b1130496c366fc34e89533a6a48047dc939ac4e957032571d1ea21fa0a1",
+      "freshness": "2026-09-27T18:24:13+00:00",
+      "authority": 0.8,
+      "confidence": 0.85,
+      "location": null
+    }
+  ],
+  "coverage": {
+    "automated": 1.0,
+    "manual": 0.0,
+    "real_world": 0.0,
+    "overall": 0.0971
+  },
+  "scores": {
+    "implementation": 0.83,
+    "verification": 0.1,
+    "real_world_evidence": 0.0,
+    "readiness": 0.4,
+    "confidence": 0.91,
+    "evidence_strength": 0.27
+  },
+  "maturity": {
+    "level": 1,
+    "name": "AD_HOC"
+  },
+  "findings": [
+    {
+      "id": "FND-94182c752e9fc3bb",
+      "audit_domain": "licensing",
+      "control_id": "BR360-LIC-001",
+      "title": "Project license and distribution terms are explicit",
+      "description": "Project distribution/license terms are not explicit in the inspected source tree.",
+      "severity": "HIGH",
+      "confidence": 0.9,
+      "applicability": "RECOMMENDED",
+      "evidence_level": "E1_STATIC",
+      "evidence": [
+        {
+          "id": "EV-dbcb6b28ad9dad0d",
+          "type": "OBSERVATION",
+          "level": "E1_STATIC",
+          "source": "builtin.license",
+          "summary": "No LICENSE/COPYING/NOTICE file or package license metadata was found.",
+          "digest": null,
+          "freshness": "2026-09-27T18:24:13+00:00",
+          "authority": 0.8,
+          "confidence": 0.9,
+          "location": null
+        }
+      ],
+      "affected_asset": "agentforge-selfaudit-target",
+      "location": null,
+      "business_impact": "Readiness risk in licensing; verify impact against the product/business context.",
+      "technical_impact": "Detect license files and distribution constraints.",
+      "operational_impact": "May create deployment, support, reliability, compliance, or delivery uncertainty depending on scope.",
+      "remediation": "Detect license files and distribution constraints.",
+      "estimated_effort": null,
+      "automation_level": "AUTOMATED",
+      "source_method": "builtin",
+      "standard_refs": [],
+      "fingerprint": "eb8e077cc7ec5baf95e18196",
+      "first_seen": "2026-09-27T18:24:14+00:00",
+      "last_seen": "2026-09-27T18:24:14+00:00",
+      "status": "OPEN"
+    },
+    {
+      "id": "FND-07f462cf5d19d955",
+      "audit_domain": "architecture",
+      "control_id": "BR360-ARCH-004",
+      "title": "Critical dependencies and ownership boundaries are explicit",
+      "description": "Only part of dependency/ownership boundary evidence is explicit.",
+      "severity": "MEDIUM",
+      "confidence": 0.85,
+      "applicability": "RECOMMENDED",
+      "evidence_level": "E1_STATIC",
+      "evidence": [
+        {
+          "id": "EV-1e2da6b876e5840c",
+          "type": "DOCUMENTATION",
+          "level": "E1_STATIC",
+          "source": "builtin.arch_ownership",
+          "summary": "Dependency/architecture boundary evidence: manifests=['package.json'], architecture_docs=['.recursive/runs/run-20260927t182410z-b0a1a911/baseline/snapshot/architecture.md', 'architecture.md'].",
+          "digest": "174a9b1130496c366fc34e89533a6a48047dc939ac4e957032571d1ea21fa0a1",
+          "freshness": "2026-09-27T18:24:13+00:00",
+          "authority": 0.8,
+          "confidence": 0.85,
+          "location": null
+        }
+      ],
+      "affected_asset": "agentforge-selfaudit-target",
+      "location": null,
+      "business_impact": "Readiness risk in architecture; verify impact against the product/business context.",
+      "technical_impact": "Detect major services/packages and map owners/interfaces.",
+      "operational_impact": "May create deployment, support, reliability, compliance, or delivery uncertainty depending on scope.",
+      "remediation": "Detect major services/packages and map owners/interfaces.",
+      "estimated_effort": null,
+      "automation_level": "AUTOMATED",
+      "source_method": "builtin",
+      "standard_refs": [
+        "REF-ARC42-TEMPLATE",
+        "REF-ARCHITECTURE-DECISION-RECORD",
+        "REF-BACKSTAGE"
+      ],
+      "fingerprint": "294404b0eee5ed7bbbc3e9d9",
+      "first_seen": "2026-09-27T18:24:14+00:00",
+      "last_seen": "2026-09-27T18:24:14+00:00",
+      "status": "OPEN"
+    }
+  ],
+  "actions": [
+    {
+      "priority": "HIGH",
+      "control_id": "BR360-LIC-001",
+      "domain": "licensing",
+      "action": "Detect license files and distribution constraints.",
+      "reason": "Project distribution/license terms are not explicit in the inspected source tree.",
+      "fingerprint": "eb8e077cc7ec5baf95e18196"
+    },
+    {
+      "priority": "MEDIUM",
+      "control_id": "BR360-ARCH-004",
+      "domain": "architecture",
+      "action": "Detect major services/packages and map owners/interfaces.",
+      "reason": "Only part of dependency/ownership boundary evidence is explicit.",
+      "fingerprint": "294404b0eee5ed7bbbc3e9d9"
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-ANA-001",
+      "domain": "analytics",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-ANA-002",
+      "domain": "analytics",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-ANA-003",
+      "domain": "analytics",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-ANA-004",
+      "domain": "analytics",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-ANA-005",
+      "domain": "analytics",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-ARCH-001",
+      "domain": "architecture",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-ARCH-002",
+      "domain": "architecture",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-ARCH-003",
+      "domain": "architecture",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-ARCH-005",
+      "domain": "architecture",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-AUTHZ-001",
+      "domain": "authorization",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-AUTHZ-002",
+      "domain": "authorization",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-AUTHZ-004",
+      "domain": "authorization",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-AUTHZ-005",
+      "domain": "authorization",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-BIZ-001",
+      "domain": "business",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-BIZ-002",
+      "domain": "business",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-BIZ-003",
+      "domain": "business",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-BIZ-004",
+      "domain": "business",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-BIZ-005",
+      "domain": "business",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-BIZ-006",
+      "domain": "business",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-DATA-002",
+      "domain": "data",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-DATA-003",
+      "domain": "data",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-DATA-004",
+      "domain": "data",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-DATA-005",
+      "domain": "data",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-DOC-001",
+      "domain": "documentation",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-DOC-002",
+      "domain": "documentation",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-DOC-003",
+      "domain": "documentation",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-DOC-004",
+      "domain": "documentation",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-DOC-005",
+      "domain": "documentation",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-EXP-001",
+      "domain": "experimentation",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-EXP-002",
+      "domain": "experimentation",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-EXP-003",
+      "domain": "experimentation",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-EXP-004",
+      "domain": "experimentation",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-EXP-005",
+      "domain": "experimentation",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-GROW-001",
+      "domain": "growth",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-GROW-002",
+      "domain": "growth",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-GROW-003",
+      "domain": "growth",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-GROW-004",
+      "domain": "growth",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-GROW-005",
+      "domain": "growth",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-LIC-002",
+      "domain": "licensing",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-LIC-003",
+      "domain": "licensing",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-LIC-004",
+      "domain": "licensing",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-LIC-005",
+      "domain": "licensing",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-OBS-001",
+      "domain": "observability",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-OBS-002",
+      "domain": "observability",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-OBS-003",
+      "domain": "observability",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-OBS-004",
+      "domain": "observability",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-OBS-005",
+      "domain": "observability",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-PRIV-001",
+      "domain": "privacy",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-PRIV-002",
+      "domain": "privacy",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-PRIV-003",
+      "domain": "privacy",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-PRIV-004",
+      "domain": "privacy",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-PRIV-005",
+      "domain": "privacy",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-PROD-001",
+      "domain": "product",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-PROD-002",
+      "domain": "product",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-PROD-003",
+      "domain": "product",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-PROD-004",
+      "domain": "product",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-PROD-005",
+      "domain": "product",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-RES-002",
+      "domain": "resilience",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-RES-003",
+      "domain": "resilience",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-RES-004",
+      "domain": "resilience",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-RES-005",
+      "domain": "resilience",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-RET-001",
+      "domain": "retention",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-RET-002",
+      "domain": "retention",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-RET-003",
+      "domain": "retention",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-RET-004",
+      "domain": "retention",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-RET-005",
+      "domain": "retention",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-RUN-002",
+      "domain": "production",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-RUN-003",
+      "domain": "production",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-RUN-005",
+      "domain": "production",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-SC-002",
+      "domain": "supply-chain",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-SC-003",
+      "domain": "supply-chain",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-SC-004",
+      "domain": "supply-chain",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-SC-005",
+      "domain": "supply-chain",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-SC-006",
+      "domain": "supply-chain",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-SCALE-001",
+      "domain": "scalability",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-SCALE-002",
+      "domain": "scalability",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-SCALE-003",
+      "domain": "scalability",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-SCALE-004",
+      "domain": "scalability",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-SCALE-005",
+      "domain": "scalability",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-SEC-001",
+      "domain": "security",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-SEC-003",
+      "domain": "security",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-SEC-004",
+      "domain": "security",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-SEC-006",
+      "domain": "security",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-SRE-001",
+      "domain": "sre",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-SRE-002",
+      "domain": "sre",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-SRE-003",
+      "domain": "sre",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-SRE-004",
+      "domain": "sre",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-SRE-005",
+      "domain": "sre",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-UX-001",
+      "domain": "ux",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-UX-002",
+      "domain": "ux",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-UX-003",
+      "domain": "ux",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-UX-004",
+      "domain": "ux",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    },
+    {
+      "priority": "INFO",
+      "control_id": "BR360-UX-005",
+      "domain": "ux",
+      "action": "Collect the required manual/runtime/real-world evidence and evaluate this control.",
+      "reason": "Control requires manual, semi-automated, runtime, legal, or real-world evidence.",
+      "fingerprint": null
+    }
+  ],
+  "blockers": [],
+  "audit_self_evaluation": {
+    "audit_coverage": 0.0971,
+    "audit_confidence": 0.091,
+    "missing_tools": [],
+    "missing_access": [],
+    "missing_real_world_data": [
+      "BR360-PROD-005",
+      "BR360-UX-002",
+      "BR360-DATA-003",
+      "BR360-RES-004",
+      "BR360-ANA-002",
+      "BR360-BIZ-001",
+      "BR360-BIZ-003",
+      "BR360-BIZ-004",
+      "BR360-BIZ-005",
+      "BR360-GROW-002",
+      "BR360-GROW-004",
+      "BR360-RET-001",
+      "BR360-RET-002",
+      "BR360-RET-003",
+      "BR360-RET-004",
+      "BR360-RET-005",
+      "BR360-SCALE-004"
+    ],
+    "unverified_assumptions": [
+      "93 applicable controls remain NOT_TESTED."
+    ],
+    "license_review_gaps": [
+      "BR360-LIC-002",
+      "BR360-LIC-003",
+      "BR360-LIC-004",
+      "BR360-LIC-005"
+    ]
+  },
+  "final": {
+    "status": "FAIL",
+    "summary": "Readiness 0.4/10; 2 open gap finding(s); 93 applicable control(s) still not tested."
+  },
+  "extensions": {
+    "adapters": {
+      "inventory": [
+        {
+          "id": "lighthouse",
+          "available": false,
+          "executable": null,
+          "version": null,
+          "capabilities": [
+            "performance"
+          ],
+          "network_intent": {
+            "network_required": false,
+            "destination_type": "none_by_default",
+            "reason": "Core candidate can run without external network; remote targets require separate explicit authorization.",
+            "read_only": true,
+            "cost_possible": false
+          },
+          "execution": "OPT_IN"
+        },
+        {
+          "id": "playwright",
+          "available": true,
+          "executable": "/opt/pyvenv/bin/playwright",
+          "version": "Version 1.57.0",
+          "capabilities": [
+            "ux"
+          ],
+          "network_intent": {
+            "network_required": false,
+            "destination_type": "none_by_default",
+            "reason": "Core candidate can run without external network; remote targets require separate explicit authorization.",
+            "read_only": true,
+            "cost_possible": false
+          },
+          "execution": "OPT_IN"
+        },
+        {
+          "id": "axe",
+          "available": false,
+          "executable": null,
+          "version": null,
+          "capabilities": [
+            "accessibility"
+          ],
+          "network_intent": {
+            "network_required": false,
+            "destination_type": "none_by_default",
+            "reason": "Core candidate can run without external network; remote targets require separate explicit authorization.",
+            "read_only": true,
+            "cost_possible": false
+          },
+          "execution": "OPT_IN"
+        },
+        {
+          "id": "pa11y",
+          "available": false,
+          "executable": null,
+          "version": null,
+          "capabilities": [
+            "accessibility"
+          ],
+          "network_intent": {
+            "network_required": false,
+            "destination_type": "none_by_default",
+            "reason": "Core candidate can run without external network; remote targets require separate explicit authorization.",
+            "read_only": true,
+            "cost_possible": false
+          },
+          "execution": "OPT_IN"
+        },
+        {
+          "id": "k6",
+          "available": false,
+          "executable": null,
+          "version": null,
+          "capabilities": [
+            "performance"
+          ],
+          "network_intent": {
+            "network_required": false,
+            "destination_type": "none_by_default",
+            "reason": "Core candidate can run without external network; remote targets require separate explicit authorization.",
+            "read_only": true,
+            "cost_possible": false
+          },
+          "execution": "OPT_IN"
+        },
+        {
+          "id": "trivy",
+          "available": false,
+          "executable": null,
+          "version": null,
+          "capabilities": [
+            "supply-chain"
+          ],
+          "network_intent": {
+            "network_required": true,
+            "destination_type": "vulnerability_database_or_public_advisory",
+            "reason": "Read-only metadata lookup/update required by this optional adapter.",
+            "read_only": true,
+            "cost_possible": false
+          },
+          "execution": "OPT_IN"
+        },
+        {
+          "id": "gitleaks",
+          "available": false,
+          "executable": null,
+          "version": null,
+          "capabilities": [
+            "security"
+          ],
+          "network_intent": {
+            "network_required": false,
+            "destination_type": "none_by_default",
+            "reason": "Core candidate can run without external network; remote targets require separate explicit authorization.",
+            "read_only": true,
+            "cost_possible": false
+          },
+          "execution": "OPT_IN"
+        },
+        {
+          "id": "osv-scanner",
+          "available": false,
+          "executable": null,
+          "version": null,
+          "capabilities": [
+            "supply-chain"
+          ],
+          "network_intent": {
+            "network_required": true,
+            "destination_type": "vulnerability_database_or_public_advisory",
+            "reason": "Read-only metadata lookup/update required by this optional adapter.",
+            "read_only": true,
+            "cost_possible": false
+          },
+          "execution": "OPT_IN"
+        },
+        {
+          "id": "syft",
+          "available": false,
+          "executable": null,
+          "version": null,
+          "capabilities": [
+            "supply-chain"
+          ],
+          "network_intent": {
+            "network_required": false,
+            "destination_type": "none_by_default",
+            "reason": "Core candidate can run without external network; remote targets require separate explicit authorization.",
+            "read_only": true,
+            "cost_possible": false
+          },
+          "execution": "OPT_IN"
+        },
+        {
+          "id": "grype",
+          "available": false,
+          "executable": null,
+          "version": null,
+          "capabilities": [
+            "supply-chain"
+          ],
+          "network_intent": {
+            "network_required": true,
+            "destination_type": "vulnerability_database_or_public_advisory",
+            "reason": "Read-only metadata lookup/update required by this optional adapter.",
+            "read_only": true,
+            "cost_possible": false
+          },
+          "execution": "OPT_IN"
+        },
+        {
+          "id": "schemathesis",
+          "available": false,
+          "executable": null,
+          "version": null,
+          "capabilities": [
+            "api"
+          ],
+          "network_intent": {
+            "network_required": false,
+            "destination_type": "none_by_default",
+            "reason": "Core candidate can run without external network; remote targets require separate explicit authorization.",
+            "read_only": true,
+            "cost_possible": false
+          },
+          "execution": "OPT_IN"
+        }
+      ],
+      "runs": []
+    },
+    "engine": {
+      "built_in_detectors": [
+        "builtin.a11y_scan_evidence",
+        "builtin.ai_inventory",
+        "builtin.api_breaking_baseline",
+        "builtin.api_contract",
+        "builtin.arch_ownership",
+        "builtin.authz_tests",
+        "builtin.data_schema",
+        "builtin.dependency_inventory",
+        "builtin.environment_config",
+        "builtin.license_metadata",
+        "builtin.performance_baseline",
+        "builtin.production_debug",
+        "builtin.resilience_bounds",
+        "builtin.secret_scan",
+        "builtin.security_headers"
+      ],
+      "detector_catalog_count": 15
+    }
+  }
+}

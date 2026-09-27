@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+.data/
+dist/
+node_modules/
+*.log
+.DS_Store
+playwright-results/
+
+node_modules/
+.env
+.env.*
+!.env.example
+.DS_Store
+.next/
+dist/

@@ -1,0 +1,7 @@
+
+> agentforge@0.1.0 fixture
+> node --experimental-strip-types scripts/fixture.ts
+
+(node:2643) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"scope":"LOCAL_OFFLINE_CORE","export":"reports/fixtures/SALON_CADRAGE_LOCAL.zip","sha256":"d06e79a2ed5be3d4a39c5d06d025e0352abc552a49a9604a2d0cb3e56ce4a651","agent_code_generated":false,"payment":"NOT_EXECUTED","sandbox":"NOT_AVAILABLE","recursive":"NOT_EXECUTED_FOR_FIXTURE","br360":"NOT_EXECUTED_FOR_FIXTURE"}

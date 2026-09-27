@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+node_modules
+.git
+.data
+reports
+agentforge-audit
+dist
+__pycache__

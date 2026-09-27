@@ -1,0 +1,288 @@
+{
+  "schema_version": "1.0.0",
+  "id": "30fb953a-06c1-4ef9-be68-14b8e05ec15e",
+  "project_name": "Mon agent",
+  "revision": 11,
+  "fields": {
+    "objective": {
+      "value": "Je veux un agent IA capable de répondre aux clients de mon salon de coiffure, consulter les disponibilités, proposer un créneau, enregistrer un rendez-vous et envoyer une confirmation.",
+      "status": "USER_CONFIRMED",
+      "confidence": 1,
+      "source": "user:initial_request",
+      "confirmed": true,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "description": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "domain": {
+      "value": "booking",
+      "status": "INFERRED",
+      "confidence": 0.7,
+      "source": "local-rule:domain",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "target_users": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "workflows": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "triggers": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "inputs": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "outputs": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "channels": {
+      "value": "Email",
+      "status": "USER_CONFIRMED",
+      "confidence": 1,
+      "source": "user:answer",
+      "confirmed": true,
+      "updated_at": "2026-09-27T18:29:15.894Z"
+    },
+    "integrations": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "tools": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "skills": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "memory": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "database": {
+      "value": "Base PostgreSQL privée",
+      "status": "USER_CONFIRMED",
+      "confidence": 1,
+      "source": "user:answer",
+      "confirmed": true,
+      "updated_at": "2026-09-27T18:29:15.895Z"
+    },
+    "authentication": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "permissions": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "autonomy": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "approvals": {
+      "value": "Validation humaine avant confirmation",
+      "status": "USER_CONFIRMED",
+      "confidence": 1,
+      "source": "user:answer",
+      "confirmed": true,
+      "updated_at": "2026-09-27T18:29:15.894Z"
+    },
+    "privacy": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "sensitive_data": {
+      "value": "Coordonnées clients seulement",
+      "status": "USER_CONFIRMED",
+      "confidence": 1,
+      "source": "user:answer",
+      "confirmed": true,
+      "updated_at": "2026-09-27T18:29:15.895Z"
+    },
+    "expected_scale": {
+      "value": "Moins de 100",
+      "status": "USER_CONFIRMED",
+      "confidence": 1,
+      "source": "user:answer",
+      "confirmed": true,
+      "updated_at": "2026-09-27T18:29:15.895Z"
+    },
+    "language": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "runtime_language": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "framework_preference": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "provider_preference": {
+      "value": "Auto",
+      "status": "USER_CONFIRMED",
+      "confidence": 1,
+      "source": "user:answer",
+      "confirmed": true,
+      "updated_at": "2026-09-27T18:29:15.895Z"
+    },
+    "model_preference": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "deployment_target": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "observability": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "success_criteria": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "tests": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "constraints": {
+      "value": null,
+      "status": "UNKNOWN",
+      "confidence": 0,
+      "source": "missing",
+      "confirmed": false,
+      "updated_at": "2026-09-27T18:29:15.892Z"
+    },
+    "calendar_provider": {
+      "value": "Google Calendar",
+      "status": "USER_CONFIRMED",
+      "confidence": 1,
+      "source": "user:answer",
+      "confirmed": true,
+      "updated_at": "2026-09-27T18:29:15.893Z"
+    },
+    "working_hours": {
+      "value": "Lundi au vendredi, 09:00 à 18:00",
+      "status": "USER_CONFIRMED",
+      "confidence": 1,
+      "source": "user:answer",
+      "confirmed": true,
+      "updated_at": "2026-09-27T18:29:15.895Z"
+    },
+    "services_durations": {
+      "value": "Coupe : 30 minutes ; coloration : 90 minutes",
+      "status": "USER_CONFIRMED",
+      "confidence": 1,
+      "source": "user:answer",
+      "confirmed": true,
+      "updated_at": "2026-09-27T18:29:15.895Z"
+    },
+    "timezone": {
+      "value": "Europe/Paris",
+      "status": "USER_CONFIRMED",
+      "confidence": 1,
+      "source": "user:answer",
+      "confirmed": true,
+      "updated_at": "2026-09-27T18:29:15.895Z"
+    }
+  }
+}

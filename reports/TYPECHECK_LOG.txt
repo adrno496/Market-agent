@@ -1,0 +1,4 @@
+
+> agentforge@0.1.0 typecheck
+> node --experimental-strip-types scripts/typecheck.ts
+

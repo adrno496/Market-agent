@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidenceReport",
+  "type": "object",
+  "required": [
+    "tool",
+    "status",
+    "summary",
+    "findings",
+    "evidence",
+    "executed_at",
+    "scope"
+  ],
+  "properties": {
+    "tool": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "PASS",
+        "WARN",
+        "BLOCK",
+        "UNKNOWN",
+        "NOT_AVAILABLE",
+        "UNTESTED",
+        "FAIL"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": "array"
+    },
+    "executed_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "scope": {
+      "type": "string"
+    },
+    "raw": {}
+  }
+}

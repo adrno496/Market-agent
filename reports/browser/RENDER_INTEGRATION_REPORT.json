@@ -1,0 +1,39 @@
+{
+  "scope": "LOCAL_UI_WITH_EXPLICIT_HTTP_TRANSPORT_BRIDGE",
+  "executed_at": "2026-09-27T18:29:48.101170+00:00",
+  "checks": [
+    {
+      "name": "desktop rendering",
+      "status": "PASS"
+    },
+    {
+      "name": "browser DOM interview -> real local HTTP backend -> framing ZIP",
+      "status": "PASS",
+      "native_browser_download": "NOT_TESTED",
+      "artifact_sha256": "d4cda34f4223a07692d6ea6d4b8641f8c9162d7ce390272e79bb8a5115aea6f3"
+    },
+    {
+      "name": "no invented cloud projects",
+      "status": "PASS"
+    },
+    {
+      "name": "objective rendered as text not HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "390px mobile rendering without horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "uncaught JS errors",
+      "status": "PASS",
+      "errors": []
+    }
+  ],
+  "limitations": [
+    "Chromium native localhost navigation blocked by administrator policy",
+    "Assets injected from local trusted source files",
+    "No native browser cookies, response-header CSP, download navigation, real login or checkout tested",
+    "No external service or generated-agent runtime tested"
+  ]
+}

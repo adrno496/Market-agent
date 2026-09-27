@@ -1,0 +1,29 @@
+[
+  {
+    "name": "desktop rendering",
+    "status": "PASS"
+  },
+  {
+    "name": "browser DOM interview -> real local HTTP backend -> framing ZIP",
+    "status": "PASS",
+    "native_browser_download": "NOT_TESTED",
+    "artifact_sha256": "d4cda34f4223a07692d6ea6d4b8641f8c9162d7ce390272e79bb8a5115aea6f3"
+  },
+  {
+    "name": "no invented cloud projects",
+    "status": "PASS"
+  },
+  {
+    "name": "objective rendered as text not HTML",
+    "status": "PASS"
+  },
+  {
+    "name": "390px mobile rendering without horizontal overflow",
+    "status": "PASS"
+  },
+  {
+    "name": "uncaught JS errors",
+    "status": "PASS",
+    "errors": []
+  }
+]

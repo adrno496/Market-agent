@@ -1,0 +1,8 @@
+
+> agentforge@0.1.0 build
+> node --experimental-strip-types scripts/build.ts
+
+(node:2819) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:2819) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+{"build":"PASS","files":22,"output":"dist","typecheck":"run separately","external_integrations":"NOT_TESTED"}
